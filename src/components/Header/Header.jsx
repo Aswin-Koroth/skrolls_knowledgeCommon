@@ -5,8 +5,8 @@ import avatar_placeholder from "@/assets/profile.png";
 
 const Header = () => {
   return (
-    <div className="h-20 flex items-center justify-end px-6 bg-background-sec">
-      <div className="flex items-center gap-9">
+    <div className="h-20 flex justify-end  max-sm:justify-center px-6 bg-background-sec">
+      <div className="flex items-center gap-9  max-sm:justify-between  max-sm:w-full">
         <OnlineIcon icon={notification_icon} flag={true} />
 
         <div className="flex items-center gap-3 cursor-pointer">
@@ -16,7 +16,12 @@ const Header = () => {
             alt="User avatar"
           />
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-text">John Doe</span>
+            <span className="font-medium flex items-center justify-between">
+              <span className="text-text text-sm">John Doe</span>
+              <span className="p-1 bg-primary text-xs text-background-sec rounded-sm leading-none">
+                Admin
+              </span>
+            </span>
             <span className="text-xs text-text-mut">johndoe@example.com</span>
           </div>
         </div>
