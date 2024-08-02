@@ -1,10 +1,5 @@
-
 const AdminCollege = () => {
-  return (
-    <div>
-      College/Librarian
-    </div>
-  )
-}
+  return <div>College/Librarian</div>;
+};
 
-export default AdminCollege
+export default AdminCollege;

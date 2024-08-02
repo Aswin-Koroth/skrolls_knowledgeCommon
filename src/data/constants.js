@@ -1,23 +1,138 @@
-import settings_icon from "../assets/settings.svg";
+import settings_icon from '../assets/settings.svg';
 
 const navpanelList = [
   {
-    label: "Dashboard",
-    link: "/",
+    label: 'Dashboard',
+    link: '/',
     icon: settings_icon,
-    type: "bottom",
+    type: 'bottom',
   },
-  { label: "Content", link: "/contents_list", icon: settings_icon },
-  { label: "University", link: "/universities_list", icon: settings_icon },
+  { label: 'Content', link: '/contents_list', icon: settings_icon },
+  { label: 'University', link: '/universities_list', icon: settings_icon },
   {
-    label: "College / Librarian ",
-    link: "/colleges_list",
+    label: 'College / Librarian ',
+    link: '/colleges_list',
     icon: settings_icon,
   },
-  { label: "Department", link: "/departments_list", icon: settings_icon },
-  { label: "User", link: "/users_list", icon: settings_icon },
-  { label: "Reports & Analysis", link: "/reports", icon: settings_icon },
-  { label: "Settings", link: "/settings", icon: settings_icon, sep: true },
+  { label: 'Department', link: '/departments_list', icon: settings_icon },
+  { label: 'User', link: '/users_list', icon: settings_icon },
+  { label: 'Reports & Analysis', link: '/reports', icon: settings_icon },
+  { label: 'Settings', link: '/settings', icon: settings_icon, sep: true },
 ];
 
-export { navpanelList };
+const products = [
+  {
+    productName: 'Smartphone XYZ',
+    category: 'Electronics',
+    brand: 'Brand A',
+    description: 'A high-end smartphone with a great camera and display.',
+    price: 999.99,
+  },
+  {
+    productName: 'Laptop ABC',
+    category: 'Computers',
+    brand: 'Brand B',
+    description: 'A powerful laptop suitable for gaming and professional work.',
+    price: 1499.99,
+  },
+  {
+    productName: 'Wireless Earbuds',
+    category: 'Accessories',
+    brand: 'Brand C',
+    description:
+      'Compact and comfortable wireless earbuds with excellent sound quality.',
+    price: 199.99,
+  },
+  {
+    productName: 'Smartwatch 123',
+    category: 'Wearables',
+    brand: 'Brand D',
+    description:
+      'A stylish smartwatch with fitness tracking and notifications.',
+    price: 299.99,
+  },
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+  {
+    productName: 'Smartphone XYZ',
+    category: 'Electronics',
+    brand: 'Brand A',
+    description: 'A high-end smartphone with a great camera and display.',
+    price: 999.99,
+  },
+  {
+    productName: 'Laptop ABC',
+    category: 'Computers',
+    brand: 'Brand B',
+    description: 'A powerful laptop suitable for gaming and professional work.',
+    price: 1499.99,
+  },
+  {
+    productName: 'Wireless Earbuds',
+    category: 'Accessories',
+    brand: 'Brand C',
+    description:
+      'Compact and comfortable wireless earbuds with excellent sound quality.',
+    price: 199.99,
+  },
+  {
+    productName: 'Smartwatch 123',
+    category: 'Wearables',
+    brand: 'Brand D',
+    description:
+      'A stylish smartwatch with fitness tracking and notifications.',
+    price: 299.99,
+  },
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+  ,
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+  ,
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+  ,
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+  ,
+  {
+    productName: '4K Television',
+    category: 'Home Entertainment',
+    brand: 'Brand E',
+    description:
+      'A large 4K television with vibrant colors and smart features.',
+    price: 799.99,
+  },
+];
+
+export { navpanelList, products };

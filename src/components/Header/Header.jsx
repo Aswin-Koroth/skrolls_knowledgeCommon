@@ -1,24 +1,25 @@
-import React from "react";
-import notification_icon from "@/assets/notification.svg";
-import OnlineIcon from "../OnlineIcon/OnlineIcon";
-import avatar_placeholder from "@/assets/profile.png";
+import React from 'react';
+import notification_icon from '@/assets/notification.svg';
+import OnlineIcon from '@/components/OnlineIcon/OnlineIcon';
+import avatar_placeholder from '@/assets/profile.png';
+import logo_icon from '@/assets/skrolls.png';
 
 const Header = () => {
   return (
-    <div className="h-20 flex justify-end  max-sm:justify-center px-6 bg-background-sec">
-      <div className="flex items-center gap-9  max-sm:justify-between  max-sm:w-full">
+    <div className="flex h-20 justify-end bg-background-sec px-6 max-sm:justify-center max-[375px]:px-2">
+      <div className="flex items-center gap-9 max-sm:w-full max-sm:gap-5 max-sm:justify-end">
+        <img className="mr-auto sm:hidden" src={logo_icon} alt="Skrolls logo" />
         <OnlineIcon icon={notification_icon} flag={true} />
-
-        <div className="flex items-center gap-3 cursor-pointer">
+        <div className="flex cursor-pointer items-center gap-3">
           <img
             className="h-10 w-10 rounded-full object-cover"
             src={avatar_placeholder}
             alt="User avatar"
           />
           <div className="flex flex-col">
-            <span className="font-medium flex items-center justify-between">
-              <span className="text-text text-sm">John Doe</span>
-              <span className="p-1 bg-primary text-xs text-background-sec rounded-sm leading-none">
+            <span className="flex items-center justify-between font-medium">
+              <span className="text-sm text-text">John Doe</span>
+              <span className="rounded-sm bg-primary p-1 text-xs leading-none text-background-sec">
                 Admin
               </span>
             </span>
