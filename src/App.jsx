@@ -1,8 +1,9 @@
-import './App.css';
 import Header from './components/Header/Header';
 import Navpanel from './components/Navpanel/Navpanel';
 
-import React, { lazy, Suspense } from 'react';
+import { Overlays } from './components/Overlays';
+
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'));
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="flex h-screen">
       <Navpanel />
-      <section className="flex min-w-0 flex-col">
+      <section className="flex min-w-0 flex-1 flex-col">
         <Header />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
@@ -33,6 +34,7 @@ function App() {
           </Routes>
         </Suspense>
       </section>
+      <Overlays />
     </div>
   );
 }

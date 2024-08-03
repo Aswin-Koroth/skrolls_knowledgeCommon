@@ -1,7 +1,7 @@
 const TableNav = () => {
   return (
     <nav
-      class="flex flex-col items-start justify-between space-y-3 px-4 py-2 md:flex-row md:items-center md:space-y-0 mt-auto"
+      class="mt-auto flex flex-col items-start justify-between space-y-3 bg-gray-200 px-4 py-2 md:flex-row md:items-center md:space-y-0"
       aria-label="Table navigation"
     >
       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">

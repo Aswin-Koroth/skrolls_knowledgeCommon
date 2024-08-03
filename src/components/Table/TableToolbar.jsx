@@ -3,9 +3,11 @@ import search_icon from '@/assets/search.svg';
 import filter_icon from '@/assets/filter.svg';
 import downarrow_icon from '@/assets/downarrow.svg';
 import add_icon from '@/assets/add.svg';
+import { useModal } from '@/context/ModalContext';
+import DropdownButton from './ui/DropDownButton';
 
-const TableToolbar = (params) => {
-  const { data, setTableData } = params;
+const TableToolbar = ({ data, setTableData }) => {
+  const { setIsSubmissionPanelOpen } = useModal();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
@@ -65,12 +67,10 @@ const TableToolbar = (params) => {
           class="flex w-full items-center space-x-3 md:w-auto"
         >
           <div className="relative w-full">
-            <button
+            <DropdownButton
               onClick={() => toggleDropdown('filter')}
-              id="filterDropdownButton"
-              data-dropdown-toggle="filterDropdown"
-              class={`${activeDropdown === 'filter' ? 'bg-gray-100' : 'bg-white'} hover:text-primary-700 flex h-[37px] w-full items-center justify-center border border-gray-200 px-4 py-1 text-sm font-medium text-gray-900 hover:bg-background-mut hover:bg-gray-100 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 md:w-auto`}
-              type="button"
+              dropdownId="filterDropdown"
+              isActive={activeDropdown === 'filter'}
             >
               <img
                 src={filter_icon}
@@ -83,7 +83,7 @@ const TableToolbar = (params) => {
                 alt="down arrow"
                 className="-mr-1 ml-1.5 w-7"
               />
-            </button>
+            </DropdownButton>
             {activeDropdown === 'filter' && (
               <div
                 id="filterDropdown"
@@ -104,7 +104,7 @@ const TableToolbar = (params) => {
                       class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700"
                     />
                     <label
-                      for="apple"
+                      htmlFor="apple"
                       class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
                     >
                       Apple (56)
@@ -115,12 +115,10 @@ const TableToolbar = (params) => {
             )}
           </div>
           <div className="relative w-full">
-            <button
+            <DropdownButton
               onClick={() => toggleDropdown('action')}
-              id="actionsDropdownButton"
-              data-dropdown-toggle="actionsDropdown"
-              class={`${activeDropdown === 'action' ? 'bg-gray-100' : 'bg-white'} hover:text-primary-700 flex h-[37px] w-full items-center justify-center border border-gray-200 px-4 py-1 text-sm font-medium text-gray-900 hover:bg-background-mut focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 md:w-auto`}
-              type="button"
+              dropdownId="actionsDropdown"
+              isActive={activeDropdown === 'action'}
             >
               <img
                 src={downarrow_icon}
@@ -128,7 +126,7 @@ const TableToolbar = (params) => {
                 className="-ml-1 mr-1.5 w-7"
               />
               Actions
-            </button>
+            </DropdownButton>
             {activeDropdown === 'action' && (
               <div
                 id="actionsDropdown"
@@ -153,6 +151,9 @@ const TableToolbar = (params) => {
             <button
               class="hover:text-primary-700 flex h-[37px] w-full items-center justify-center border border-gray-200 bg-primary px-4 py-1 text-sm font-medium text-white hover:bg-red-400 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 md:w-auto"
               type="button"
+              onClick={() => {
+                setIsSubmissionPanelOpen(true);
+              }}
             >
               <img src={add_icon} alt="Add icon" className="-ml-1 mr-1.5 w-6" />
               <span className="leading-none">Add new</span>

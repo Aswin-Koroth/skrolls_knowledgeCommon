@@ -1,6 +1,6 @@
 import settings_icon from '../assets/settings.svg';
 
-const navpanelList = [
+const NAV_LIST = [
   {
     label: 'Dashboard',
     link: '/',
@@ -19,6 +19,12 @@ const navpanelList = [
   { label: 'Reports & Analysis', link: '/reports', icon: settings_icon },
   { label: 'Settings', link: '/settings', icon: settings_icon, sep: true },
 ];
+
+const CONTENTS_TABLE_HEADERS = [];
+const USERS_TABLE_HEADERS = [];
+const COLLEGES_TABLE_HEADERS = [];
+const DEPARTMENTS_TABLE_HEADERS = [];
+const UNIVERSITIES_TABLE_HEADERS = [];
 
 const products = [
   {
@@ -97,7 +103,6 @@ const products = [
       'A large 4K television with vibrant colors and smart features.',
     price: 799.99,
   },
-  ,
   {
     productName: '4K Television',
     category: 'Home Entertainment',
@@ -135,4 +140,4 @@ const products = [
   },
 ];
 
-export { navpanelList, products };
+export { NAV_LIST, products };

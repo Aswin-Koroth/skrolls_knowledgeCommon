@@ -1,4 +1,3 @@
-import React from 'react';
 import notification_icon from '@/assets/notification.svg';
 import OnlineIcon from '@/components/OnlineIcon/OnlineIcon';
 import avatar_placeholder from '@/assets/profile.png';
@@ -7,7 +6,7 @@ import logo_icon from '@/assets/skrolls.png';
 const Header = () => {
   return (
     <div className="flex h-20 justify-end bg-background-sec px-6 max-sm:justify-center max-[375px]:px-2">
-      <div className="flex items-center gap-9 max-sm:w-full max-sm:gap-5 max-sm:justify-end">
+      <div className="flex items-center gap-9 max-sm:w-full max-sm:justify-end max-sm:gap-5">
         <img className="mr-auto sm:hidden" src={logo_icon} alt="Skrolls logo" />
         <OnlineIcon icon={notification_icon} flag={true} />
         <div className="flex cursor-pointer items-center gap-3">
