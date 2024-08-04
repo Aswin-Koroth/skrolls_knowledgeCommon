@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 const NavpanelItem = (params) => {
@@ -6,7 +6,7 @@ const NavpanelItem = (params) => {
   return (
     <Link
       to={link}
-      className={clsx(
+      className={cn(
         'h-[60px] w-full cursor-pointer select-none border-l-4 hover:bg-text-fade',
         {
           'border-primary bg-background': isSelected,
@@ -17,7 +17,7 @@ const NavpanelItem = (params) => {
       )}
     >
       <div
-        className={clsx(
+        className={cn(
           'mx-5 flex h-full items-center justify-start gap-6 hover:border-text-fade',
           {
             'border-background': isSelected,

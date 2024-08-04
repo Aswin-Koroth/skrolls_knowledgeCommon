@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 
 const DropdownButton = ({
   onClick,
@@ -11,7 +11,7 @@ const DropdownButton = ({
     <button
       onClick={onClick}
       data-dropdown-toggle={dropdownId}
-      className={clsx(
+      className={cn(
         'flex h-[37px] w-full items-center justify-center border px-4 py-1 text-sm font-medium',
         'focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300',
         'md:w-auto',

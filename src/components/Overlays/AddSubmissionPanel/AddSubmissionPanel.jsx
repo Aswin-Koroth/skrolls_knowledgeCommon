@@ -3,7 +3,7 @@ import settings_icon from '@/assets/settings.svg';
 import { useModal } from '@/context/ModalContext';
 import useClickOutside from '@/hooks/useClickOutside';
 import { useRef } from 'react';
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 
 const AddSubmissionPanel = () => {
   const { isSubmissionPanelOpen, setIsSubmissionPanelOpen } = useModal();
@@ -24,7 +24,7 @@ const AddSubmissionPanel = () => {
 
   return (
     <div
-      className={clsx(
+      className={cn(
         'fixed z-50 flex h-full flex-col overflow-hidden bg-white pt-1 transition-all duration-300',
         {
           'right-0': isSubmissionPanelOpen,
