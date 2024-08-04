@@ -1,7 +1,8 @@
 import add_icon from '@/assets/add.svg';
 import settings_icon from '@/assets/settings.svg';
+import close_icon from '@/assets/close.svg';
+
 import { useModal } from '@/context/ModalContext';
-import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { modals } from '@/data/constants';
 import useClickOutside from '@/hooks/useClickOutside';
@@ -38,9 +39,9 @@ const AddSubmissionPanel = () => {
       ref={panelRef}
     >
       <img
-        src={add_icon}
+        src={close_icon}
         alt="close"
-        className="m-3 h-7 w-7 cursor-pointer self-end rounded-full bg-primary hover:bg-red-200"
+        className="m-3 h-8 w-8 cursor-pointer self-end rounded-full p-1 hover:bg-red-200"
         onClick={() => {
           closeModal(modals.SUBMISSION_PANEL);
         }}
