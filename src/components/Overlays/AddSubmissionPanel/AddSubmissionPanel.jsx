@@ -1,15 +1,19 @@
 import add_icon from '@/assets/add.svg';
 import settings_icon from '@/assets/settings.svg';
 import { useModal } from '@/context/ModalContext';
-import useClickOutside from '@/hooks/useClickOutside';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
+import { modals } from '@/data/constants';
+import useClickOutside from '@/hooks/useClickOutside';
 
 const AddSubmissionPanel = () => {
-  const { isSubmissionPanelOpen, setIsSubmissionPanelOpen } = useModal();
-  const panelRef = useRef(null);
+  const { closeModal, isModalOpen } = useModal();
 
-  useClickOutside(panelRef, () => setIsSubmissionPanelOpen(false));
+  const panelRef = useClickOutside(isModalOpen(modals.SUBMISSION_PANEL), () =>
+    closeModal(modals.SUBMISSION_PANEL)
+  );
+
+  // if (!isModalOpen(modals.SUBMISSION_PANEL)) return null;
 
   const SUBMISSION_TYPES = [
     'Article',
@@ -27,8 +31,8 @@ const AddSubmissionPanel = () => {
       className={cn(
         'fixed z-50 flex h-full flex-col overflow-hidden bg-white pt-1 transition-all duration-300',
         {
-          'right-0': isSubmissionPanelOpen,
-          '-right-[100%]': !isSubmissionPanelOpen,
+          'right-0': isModalOpen(modals.SUBMISSION_PANEL),
+          '-right-[100%]': !isModalOpen(modals.SUBMISSION_PANEL),
         }
       )}
       ref={panelRef}
@@ -38,7 +42,7 @@ const AddSubmissionPanel = () => {
         alt="close"
         className="m-3 h-7 w-7 cursor-pointer self-end rounded-full bg-primary hover:bg-red-200"
         onClick={() => {
-          setIsSubmissionPanelOpen(false);
+          closeModal(modals.SUBMISSION_PANEL);
         }}
       />
       {SUBMISSION_TYPES.map((item) => (

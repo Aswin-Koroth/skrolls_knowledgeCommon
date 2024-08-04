@@ -6,14 +6,18 @@ import add_icon from '@/assets/add.svg';
 import { useModal } from '@/context/ModalContext';
 import DropdownButton from './ui/DropDownButton';
 import useClickOutside from '@/hooks/useClickOutside';
+import { modals } from '@/data/constants';
 
 const TableToolbar = ({ data, setTableData }) => {
-  const { setIsSubmissionPanelOpen } = useModal();
+  const { openModal } = useModal();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const dropdownRef = useRef(null);
 
-  useClickOutside(dropdownRef, () => setActiveDropdown(null));
+  const dropdownRef = useClickOutside(activeDropdown, () =>
+    setActiveDropdown(null)
+  );
+
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
@@ -139,7 +143,7 @@ const TableToolbar = ({ data, setTableData }) => {
               className="hover:text-primary-700 flex h-[37px] w-full items-center justify-center border border-gray-200 bg-primary px-4 py-1 text-sm font-medium text-white hover:bg-red-400 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 md:w-auto"
               type="button"
               onClick={() => {
-                setIsSubmissionPanelOpen(true);
+                openModal(modals.SUBMISSION_PANEL);
               }}
             >
               <img src={add_icon} alt="Add icon" className="-ml-1 mr-1.5 w-6" />
