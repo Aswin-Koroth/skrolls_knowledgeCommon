@@ -58,9 +58,9 @@ const AdminCollege = () => {
     setCurrentPage(1); // Reset to first page when data changes
   }, []);
 
-  const handleAddNew = useCallback(() => {
-    setIsSubmissionPanelOpen(true);
-  }, [setIsSubmissionPanelOpen]);
+  // const handleAddNew = useCallback(() => {
+  //   setIsSubmissionPanelOpen(true);
+  // }, [setIsSubmissionPanelOpen]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -74,14 +74,14 @@ const AdminCollege = () => {
         <TableToolbar
           data={products}
           setTableData={setTableDataCallback}
-          searchFields={[
-            'productName',
-            'category',
-            'brand',
-            'description',
-            'price',
-          ]}
-          onAddNew={handleAddNew}
+          // searchFields={[
+          //   'productName',
+          //   'category',
+          //   'brand',
+          //   'description',
+          //   'price',
+          // ]}
+          // onAddNew={handleAddNew}
         />
         <Table
           columns={columns}

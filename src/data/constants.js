@@ -1,5 +1,10 @@
 import settings_icon from '../assets/settings.svg';
 
+const modals = {
+  SUBMISSION_PANEL: 'add_submissions_panel',
+  VIEW_MODAL: 'view_submission_modal',
+};
+
 const NAV_LIST = [
   {
     label: 'Dashboard',
@@ -140,4 +145,4 @@ const products = [
   },
 ];
 
-export { NAV_LIST, products };
+export { NAV_LIST, products, modals };

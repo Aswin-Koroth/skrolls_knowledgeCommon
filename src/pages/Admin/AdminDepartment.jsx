@@ -4,13 +4,13 @@ import { TableNav, TableToolbar, Table } from '@/components/Table';
 import search_icon from '@/assets/search.svg';
 import approve_icon from '@/assets/search.svg';
 import reject_icon from '@/assets/search.svg';
-import { useModal } from '@/context/ModalContext';
+// import { useModal } from '@/context/ModalContext';
 
 const AdminDepartment = () => {
   const [tableData, setTableData] = useState(products);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const { setIsSubmissionPanelOpen } = useModal();
+  // const { setIsSubmissionPanelOpen } = useModal();
 
   const columns = useMemo(
     () => [
@@ -58,9 +58,9 @@ const AdminDepartment = () => {
     setCurrentPage(1); // Reset to first page when data changes
   }, []);
 
-  const handleAddNew = useCallback(() => {
-    setIsSubmissionPanelOpen(true);
-  }, [setIsSubmissionPanelOpen]);
+  // const handleAddNew = useCallback(() => {
+  //   setIsSubmissionPanelOpen(true);
+  // }, [setIsSubmissionPanelOpen]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -74,14 +74,14 @@ const AdminDepartment = () => {
         <TableToolbar
           data={products}
           setTableData={setTableDataCallback}
-          searchFields={[
-            'productName',
-            'category',
-            'brand',
-            'description',
-            'price',
-          ]}
-          onAddNew={handleAddNew}
+          // searchFields={[
+          //   'productName',
+          //   'category',
+          //   'brand',
+          //   'description',
+          //   'price',
+          // ]}
+          // onAddNew={handleAddNew}
         />
         <Table
           columns={columns}

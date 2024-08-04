@@ -34,7 +34,7 @@ function App() {
           </Routes>
         </Suspense>
       </section>
-      <Overlays />
+      {/* <Overlays /> */}
     </div>
   );
 }

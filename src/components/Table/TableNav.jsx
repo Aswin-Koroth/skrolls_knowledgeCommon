@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 const TableNav = ({
@@ -32,11 +33,16 @@ const TableNav = ({
                 e.preventDefault();
                 handlePageChange(i);
               }}
-              className={`flex items-center justify-center border border-gray-300 bg-white px-3 py-2 text-sm leading-tight ${
-                i === currentPage
-                  ? 'text-primary-600 bg-primary-50 border-primary-300 hover:bg-primary-100 hover:text-primary-700 z-10'
-                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
-              } dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+              className={cn(
+                'flex items-center justify-center border border-gray-300 bg-white px-3 py-2 text-sm leading-tight',
+                {
+                  'text-primary-600 border-primary-300 hover:bg-primary-100 hover:text-primary-700 z-10 bg-gray-200':
+                    i === currentPage,
+                  'text-gray-500 hover:bg-gray-100 hover:text-gray-700':
+                    i !== currentPage,
+                },
+                'dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+              )}
             >
               {i}
             </a>
