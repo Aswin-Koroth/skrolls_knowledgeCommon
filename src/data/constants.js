@@ -5,24 +5,33 @@ const modals = {
   VIEW_MODAL: 'view_submission_modal',
 };
 
-const NAV_LIST = [
+const ADMIN_NAV_LIST = [
   {
     label: 'Dashboard',
     link: '/',
     icon: settings_icon,
     type: 'bottom',
   },
-  { label: 'Content', link: '/contents_list', icon: settings_icon },
-  { label: 'University', link: '/universities_list', icon: settings_icon },
+  { label: 'Content', link: '/admin/contents_list', icon: settings_icon },
   {
-    label: 'College / Librarian ',
-    link: '/colleges_list',
+    label: 'University',
+    link: '/admin/universities_list',
     icon: settings_icon,
   },
-  { label: 'Department', link: '/departments_list', icon: settings_icon },
-  { label: 'User', link: '/users_list', icon: settings_icon },
-  { label: 'Reports & Analysis', link: '/reports', icon: settings_icon },
-  { label: 'Settings', link: '/settings', icon: settings_icon, sep: true },
+  {
+    label: 'College / Librarian ',
+    link: '/admin/colleges_list',
+    icon: settings_icon,
+  },
+  { label: 'Department', link: '/admin/departments_list', icon: settings_icon },
+  { label: 'User', link: '/admin/users_list', icon: settings_icon },
+  { label: 'Reports & Analysis', link: '/admin/reports', icon: settings_icon },
+  {
+    label: 'Settings',
+    link: '/admin/settings',
+    icon: settings_icon,
+    sep: true,
+  },
 ];
 
 const CONTENTS_TABLE_HEADERS = [];
@@ -145,4 +154,4 @@ const products = [
   },
 ];
 
-export { NAV_LIST, products, modals };
+export { ADMIN_NAV_LIST, products, modals };
