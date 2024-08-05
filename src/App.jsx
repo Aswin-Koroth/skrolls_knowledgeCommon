@@ -1,10 +1,12 @@
-import Header from './components/Header/Header';
-import Navpanel from './components/Navpanel/Navpanel';
-
-import { Overlays } from './components/Overlays';
-
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
+
+const Home = lazy(() => import('./pages/Public/Home'));
+
+// const PublicLayout = lazy(() => import('./layouts/PublicLayout'));
+// const UserLayout = lazy(() => import('./layouts/UserLayout'));
+// const LibrarianLayout = lazy(() => import('./layouts/LibrarianLayout'));
+const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
 
 const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'));
 const AdminContent = lazy(() => import('./pages/Admin/AdminContent'));
@@ -17,25 +19,38 @@ const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <Navpanel />
-      <section className="flex min-w-0 flex-1 flex-col">
-        <Header />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<AdminDashboard />} />
-            <Route path="/contents_list" element={<AdminContent />} />
-            <Route path="/universities_list" element={<AdminUniversity />} />
-            <Route path="/colleges_list" element={<AdminCollege />} />
-            <Route path="/departments_list" element={<AdminDepartment />} />
-            <Route path="/users_list" element={<AdminUser />} />
-            <Route path="/reports" element={<AdminReports />} />
-            <Route path="/settings" element={<AdminSettings />} />
-          </Routes>
-        </Suspense>
-      </section>
-      {/* <Overlays /> */}
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        {/* <Route element={<PublicLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route> */}
+
+        {/* <Route element={<UserLayout />}>
+          <Route path="/user" element={<UserDashboard />} />
+          <Route path="/user/profile" element={<UserProfile />} />
+        </Route> */}
+
+        {/* <Route element={<LibrarianLayout />}>
+          <Route path="/librarian" element={<LibrarianDashboard />} />
+        </Route> */}
+
+        <Route element={<AdminLayout />}>
+          <Route path="/" element={<AdminDashboard />} />
+          <Route path="/admin/contents_list" element={<AdminContent />} />
+          <Route
+            path="/admin/universities_list"
+            element={<AdminUniversity />}
+          />
+          <Route path="/admin/colleges_list" element={<AdminCollege />} />
+          <Route path="/admin/departments_list" element={<AdminDepartment />} />
+          <Route path="/admin/users_list" element={<AdminUser />} />
+          <Route path="/admin/reports" element={<AdminReports />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
+        </Route>
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Suspense>
   );
 }
 
