@@ -6,7 +6,9 @@ function PublicLayout() {
     <div className="flex h-screen">
       <section className="flex min-w-0 flex-1 flex-col">
         <Header />
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </section>
     </div>
   );

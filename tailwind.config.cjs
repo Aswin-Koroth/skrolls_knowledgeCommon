@@ -14,11 +14,14 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-        xs: '375px',
+       
         '2xl': '1400px',
       },
     },
     extend: {
+      screens:{
+        xs: '375px',
+      },
       colors: {
         border: {
           DEFAULT: 'hsl(var(--border-pri))',

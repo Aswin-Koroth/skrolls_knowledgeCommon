@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navpanel from '../components/Navpanel/Navpanel';
 import Header from '../components/Header/Header';
+import { Suspense } from 'react';
 
 function AdminLayout() {
   return (
@@ -8,7 +9,9 @@ function AdminLayout() {
       <Navpanel />
       <section className="flex min-w-0 flex-1 flex-col">
         <Header />
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </section>
     </div>
   );
