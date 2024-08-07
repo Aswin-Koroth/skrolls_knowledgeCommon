@@ -19,7 +19,7 @@ const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    // <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {/* <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
@@ -50,7 +50,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Suspense>
+    // </Suspense>
   );
 }
 

@@ -5,7 +5,7 @@ import logo_icon from '@/assets/skrolls.png';
 
 const Header = () => {
   return (
-    <div className="flex h-20 justify-end bg-background-sec px-6 max-sm:justify-center max-[375px]:px-2">
+    <div className="flex h-20 justify-end bg-background-sec px-6 max-sm:justify-center max-xs:px-2">
       <div className="flex items-center gap-9 max-sm:w-full max-sm:justify-end max-sm:gap-5">
         <img className="mr-auto sm:hidden" src={logo_icon} alt="Skrolls logo" />
         <OnlineIcon icon={notification_icon} flag={true} />
