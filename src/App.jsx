@@ -16,7 +16,7 @@ const AdminDepartment = lazy(() => import('./pages/Admin/AdminDepartment'));
 const AdminUser = lazy(() => import('./pages/Admin/AdminUser'));
 const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
 const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
-
+const PublicHome = lazy(() => import('./pages/Public/Home'));
 function App() {
   return (
     // <Suspense fallback={<div>Loading...</div>}>
@@ -46,9 +46,13 @@ function App() {
           <Route path="/admin/users_list" element={<AdminUser />} />
           <Route path="/admin/reports" element={<AdminReports />} />
           <Route path="/admin/settings" element={<AdminSettings />} />
+          
+
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/public/home" element={<PublicHome />} />
+        
       </Routes>
     // </Suspense>
   );
