@@ -1,19 +1,14 @@
 import React from 'react';
-import College from '@/assets/farookcollege.png';
 import Pattern from '@/assets/bg.png';
 import Image1 from '@/assets/ruby.png';
 import Image2 from '@/assets/knowledgeCommon.png';
 import Image3 from '@/assets/citizenScience.png';
-import Arrow from '@/assets/rightArrow.png';
 import Card from '@/components/LandingPage/Card'
+import LogoHeader from '@/components/Knowledgecommon/LogoHeader';
 const Home = () => {
   return (
     <div>
-      <div className="w-full h-[100px] bg-white flex justify-start items-center">
-        <div className='w-[300px] h-[90px] flex justify-center items-center'>
-          <img className='ml-[30px]' src={College} alt="College Logo" />
-        </div>
-      </div>
+      <LogoHeader/>
       <div className='w-full h-[350px] bg-red-800 flex justify-center'
       style={{ backgroundImage: `url(${Pattern})`,backgroundSize: 'cover'}}>
         <div className='w-[900px] h-[100px] bg-white font-bold  flex justify-center items-center mt-[100px] rounded-[18px] text-[24px] text-red-800'>Open Science Press</div>
