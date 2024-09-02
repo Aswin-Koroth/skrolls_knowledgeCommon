@@ -19,6 +19,8 @@ const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
 const AuthorPage = lazy(() => import('./pages/Public/knowledgeCommon/AuthorPage'));
+const ResultPage = lazy(() => import('./pages/Public/knowledgeCommon/ResultPage'));
+
 function App() {
   return (
     // <Suspense fallback={<div>Loading...</div>}>
@@ -56,6 +58,7 @@ function App() {
         <Route path="/public/landing" element={<PublicHome />} />
         <Route path="/public/home" element={<HomePage />} />
         <Route path="/public/author" element={<AuthorPage />} />
+        <Route path="/public/result" element={<ResultPage />} />
         
       </Routes>
     // </Suspense>
