@@ -17,7 +17,8 @@ const AdminUser = lazy(() => import('./pages/Admin/AdminUser'));
 const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
 const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
-const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'))
+const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
+const AuthorPage = lazy(() => import('./pages/Public/knowledgeCommon/AuthorPage'));
 function App() {
   return (
     // <Suspense fallback={<div>Loading...</div>}>
@@ -54,6 +55,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/public/landing" element={<PublicHome />} />
         <Route path="/public/home" element={<HomePage />} />
+        <Route path="/public/author" element={<AuthorPage />} />
         
       </Routes>
     // </Suspense>

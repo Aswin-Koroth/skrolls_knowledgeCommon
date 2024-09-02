@@ -16,7 +16,7 @@ const HomePage = () => {
       <CollegeHeader/>
       <div className="h-[600px] w-[full] bg-[#F5F5F5]">
       <SearchTab/>
-      <SelectionTAb/>
+      <SelectionTAb activeTab= 'department'/>
       <div className="h-[750px] w-full flex justify-center">
         <div className="h-full w-[94%] flex flex-wrap gap-[15px]">
         <CollegeCard HeroImg={It} Title="Department of Informations Technology"/>
