@@ -20,7 +20,7 @@ const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
 const AuthorPage = lazy(() => import('./pages/Public/knowledgeCommon/AuthorPage'));
 const ResultPage = lazy(() => import('./pages/Public/knowledgeCommon/ResultPage'));
-
+const ArticlePage = lazy(() => import('./pages/Public/knowledgeCommon/ArticlePage'));
 function App() {
   return (
     // <Suspense fallback={<div>Loading...</div>}>
@@ -59,7 +59,7 @@ function App() {
         <Route path="/public/home" element={<HomePage />} />
         <Route path="/public/author" element={<AuthorPage />} />
         <Route path="/public/result" element={<ResultPage />} />
-        
+        <Route path="/public/article" element={<ArticlePage />} /> 
       </Routes>
     // </Suspense>
   );

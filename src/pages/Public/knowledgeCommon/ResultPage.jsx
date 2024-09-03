@@ -2,8 +2,8 @@ import React from 'react'
 import LogoHeader from '@/components/Knowledgecommon/LogoHeader';
 import CollegeHeader from '@/components/Knowledgecommon/CollegeHeader';
 import SearchTab from '@/components/Knowledgecommon/SearchTab';
-import ArticleCard from './ArticleCard';
-import BreadCrumbs from './BreadCrumbs';
+import ArticleCard from '../../../components/Knowledgecommon/ArticleCard';
+import BreadCrumbs from '../../../components/Knowledgecommon/BreadCrumbs';
 import Author1 from '@/assets/author1.png';
 
 const ResultPage = () => {
