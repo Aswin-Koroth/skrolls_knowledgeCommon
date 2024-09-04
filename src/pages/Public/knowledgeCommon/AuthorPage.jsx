@@ -47,15 +47,15 @@ const AuthorPage = () => {
             </div>
         </div>
         <div className="h-[20px] w-full flex justify-center items-center"><p className='text-[#776968] text-[15px] font-semibold'>Research Activity</p></div>
-        <div className="h-[600px] w-full bg-[yellow] flex justify-end">
-            <div className="h-full w-[960px] bg-green-400">
+        <div className="h-[600px] w-full flex justify-end">
+            <div className="h-full w-[960px]">
             <div className='h-[600px] w-full flex justify-center items-start mt-[10px]'>
                 <ArticleCard ArticleTitle="Innovative Strategies for Enhancing Business Growth in the Digital Age" 
                 ArticleTopic="Hellenic Plant Protection Journal" Category="Journal article" 
                 PublishedDate="01 Jan 2022" AuthorImage={Author1} AuthorName="A. Majeed"/>
                 </div>
             </div>
-            <div className="h-full w-[340px] bg-[blue]"></div>
+            <div className="h-full w-[340px]"></div>
         </div>
     </div>
   )
