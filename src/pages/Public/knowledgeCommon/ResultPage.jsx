@@ -12,7 +12,7 @@ const ResultPage = () => {
       <LogoHeader/>
       <CollegeHeader/>
       <div className="h-[800px] w-full bg-[#F9FAFB]">
-        <SearchTab/>
+        <SearchTab />
         <BreadCrumbs/>
         <div className='h-[600px] w-full flex justify-center items-start mt-[10px]'>
         <ArticleCard ArticleTitle="Innovative Strategies for Enhancing Business Growth in the Digital Age" 
