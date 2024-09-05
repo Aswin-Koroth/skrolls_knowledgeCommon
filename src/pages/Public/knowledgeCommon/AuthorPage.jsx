@@ -8,6 +8,9 @@ import Facebook from '@/assets/facebook.svg';
 import Twitter from '@/assets/twitterx.svg'; 
 import Settings from '@/assets/Settingsdot.svg'
 import ArticleCard from '@/components/Knowledgecommon/ArticleCard';
+import Vector from '@/assets/Vector.svg';
+import MetricsScore from '@/components/Knowledgecommon/MetricsScore';
+import SocialMediaIcons from '@/components/Knowledgecommon/SocialMediaIcons';
 const AuthorPage = () => {
   return (
     <div>
@@ -37,10 +40,10 @@ const AuthorPage = () => {
                                 <img className='h-[24] w-[69px] ' src={CitizenScience} alt="" />
                                 <p className=' h-[24px] text-[12px] font-bold mt-[5px]'>Citizen Science</p>
                             </div>
-                            <div className="h-[36px] w-[36px] rounded-[18px] flex justify-center items-center"><img src={Instagram} alt="" /></div>
-                            <div className="h-[36px] w-[36px] rounded-[18px] flex justify-center items-center"><img src={Facebook} alt="" /></div>
-                            <div className="h-[36px] w-[36px] rounded-[18px] flex justify-center items-center"><img src={Twitter} alt="" /></div>
-                            <div className="h-[36px] w-[36px] rounded-[18px] flex justify-center items-center"><img src={Settings} alt="" /></div>
+                            <SocialMediaIcons Images={Instagram} />
+                            <SocialMediaIcons Images={Facebook} />
+                            <SocialMediaIcons Images={Twitter} />
+                            <SocialMediaIcons Images={Settings} />
                         </div>
                 </div>
                 </div>
@@ -55,7 +58,29 @@ const AuthorPage = () => {
                 PublishedDate="01 Jan 2022" AuthorImage={Author1} AuthorName="A. Majeed"/>
                 </div>
             </div>
-            <div className="h-full w-[340px]"></div>
+            <div className="h-full w-[340px] ">
+                <div className="w-[323px] h-[375px] bg-white rounded-[27px] ml-[10px] flex flex-col justify-between items-center">
+                    <div className="h-[20px] w-full mt-[20px] flex justify-center items-center ">
+                        <div className="h-full w-[270px] flex justify-between">
+                            <p className='text-[12px] text-[#000] font-semibold '>Royalty Score</p>
+                            <img src={Vector} alt="" />
+                        </div>
+                    </div>
+                    <div className="h-[100px] w-full  flex flex-col">
+                        <div className="h-[75px] w-full flex justify-center items-center   relative before:content-[''] before:absolute before:h-[71px] before:w-full before:border-l-[4px] before:border-red-500 ">
+                            <p className='h-full w-full text-[64px] font-bold flex justify-center items-center '>384</p>
+                        </div>
+                        <p className='h-[20px] w-full  flex justify-center items-center'>Score</p>
+                    </div>
+                    <div className="h-[120px] w-full flex flex-col justify-center items-center mb-[20px]">
+                        <MetricsScore Title="Citation" Score="22" />
+                        <MetricsScore Title="Peer Reviews" Score="12" />
+                        <MetricsScore Title="Citizen Score" Score="07" />
+                        <MetricsScore Title="Download" Score="22" />
+                        <MetricsScore Title="Alt metrics" Score="13" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   )
