@@ -8,7 +8,7 @@ const modals = {
 const ADMIN_NAV_LIST = [
   {
     label: 'Dashboard',
-    link: '/',
+    link: '/admin',
     icon: settings_icon,
     type: 'bottom',
   },

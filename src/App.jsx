@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import PublicLayout from './layouts/PublicLayout';
 
 const Home = lazy(() => import('./pages/Public/Home'));
 
@@ -18,50 +19,51 @@ const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
 const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
-const ResultPage = lazy(() => import('./pages/Public/knowledgeCommon/ResultPage'));
-const ArticlePage = lazy(() => import('./pages/Public/knowledgeCommon/ArticlePage'));
-const AuthorPage = lazy(() => import('./pages/Public/knowledgeCommon/AuthorPage'));
+const ResultPage = lazy(
+  () => import('./pages/Public/knowledgeCommon/ResultPage')
+);
+const ArticlePage = lazy(
+  () => import('./pages/Public/knowledgeCommon/ArticlePage')
+);
+const AuthorPage = lazy(
+  () => import('./pages/Public/knowledgeCommon/AuthorPage')
+);
 function App() {
   return (
-    // <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
-        {/* <Route element={<PublicLayout />}>
+    <Routes>
+      {/* <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
         </Route> */}
 
-        {/* <Route element={<UserLayout />}>
+      {/* <Route element={<UserLayout />}>
           <Route path="/user" element={<UserDashboard />} />
           <Route path="/user/profile" element={<UserProfile />} />
         </Route> */}
 
-        {/* <Route element={<LibrarianLayout />}>
+      {/* <Route element={<LibrarianLayout />}>
           <Route path="/librarian" element={<LibrarianDashboard />} />
         </Route> */}
 
-        <Route element={<AdminLayout />}>
-          <Route path="/" element={<AdminDashboard />} />
-          <Route path="/admin/contents_list" element={<AdminContent />} />
-          <Route
-            path="/admin/universities_list"
-            element={<AdminUniversity />}
-          />
-          <Route path="/admin/colleges_list" element={<AdminCollege />} />
-          <Route path="/admin/departments_list" element={<AdminDepartment />} />
-          <Route path="/admin/users_list" element={<AdminUser />} />
-          <Route path="/admin/reports" element={<AdminReports />} />
-          <Route path="/admin/settings" element={<AdminSettings />} />
-          
+      <Route element={<AdminLayout />}>
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/contents_list" element={<AdminContent />} />
+        <Route path="/admin/universities_list" element={<AdminUniversity />} />
+        <Route path="/admin/colleges_list" element={<AdminCollege />} />
+        <Route path="/admin/departments_list" element={<AdminDepartment />} />
+        <Route path="/admin/users_list" element={<AdminUser />} />
+        <Route path="/admin/reports" element={<AdminReports />} />
+        <Route path="/admin/settings" element={<AdminSettings />} />
+      </Route>
 
-        </Route>
-
+      <Route element={<PublicLayout />}>
+        <Route path="/" element={<PublicHome />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/result" element={<ResultPage />} />
+        <Route path="/article" element={<ArticlePage />} />
+        <Route path="/authorPage" element={<AuthorPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
-        <Route path="/public/landing" element={<PublicHome />} />
-        <Route path="/public/home" element={<HomePage />} />
-        <Route path="/public/result" element={<ResultPage />} />
-        <Route path="/public/article" element={<ArticlePage />} /> 
-        <Route path="/public/authorPage" element={<AuthorPage />} />
-      </Routes>
-    // </Suspense>
+      </Route>
+    </Routes>
   );
 }
 

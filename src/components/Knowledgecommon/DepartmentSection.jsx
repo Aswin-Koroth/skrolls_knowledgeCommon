@@ -10,11 +10,11 @@ const DepartmentSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-full w-[94%] flex flex-wrap gap-[15px]">
+    <div className="flex h-full w-[94%] flex-wrap gap-[15px]">
       <CollegeCard
         HeroImg={It}
         Title="Department of Information Technology"
-        onClick={() => navigate('/public/result')}  
+        onClick={() => navigate('/result')}
       />
       <CollegeCard HeroImg={Stat} Title="Department of Statistics" />
       <CollegeCard HeroImg={Maths} Title="Department of Mathematics" />
