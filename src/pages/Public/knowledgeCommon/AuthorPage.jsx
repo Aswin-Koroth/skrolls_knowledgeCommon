@@ -11,7 +11,9 @@ import ArticleCard from '@/components/Knowledgecommon/ArticleCard';
 import Vector from '@/assets/Vector.svg';
 import MetricsScore from '@/components/Knowledgecommon/MetricsScore';
 import SocialMediaIcons from '@/components/Knowledgecommon/SocialMediaIcons';
+import { useNavigate } from 'react-router-dom';
 const AuthorPage = () => {
+    const navigate = useNavigate();
   return (
     <div>
       <LogoHeader/>
@@ -55,7 +57,7 @@ const AuthorPage = () => {
             <div className='h-[600px] w-full flex justify-center items-start mt-[10px]'>
                 <ArticleCard ArticleTitle="Innovative Strategies for Enhancing Business Growth in the Digital Age" 
                 ArticleTopic="Hellenic Plant Protection Journal" Category="Journal article" 
-                PublishedDate="01 Jan 2022" AuthorImage={Author1} AuthorName="A. Majeed"/>
+                PublishedDate="01 Jan 2022" AuthorImage={Author1} AuthorName="A. Majeed" onClick={() => navigate('/public/article')} />
                 </div>
             </div>
             <div className="h-full w-[340px] ">

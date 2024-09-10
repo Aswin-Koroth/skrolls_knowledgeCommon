@@ -5,9 +5,9 @@ import Author4 from '@/assets/author4.png';
 import Tick from '@/assets/tick.svg';
 import Cover from '@/assets/Cover.png';
 import fileDownload from '@/assets/fileDownload.svg';
-const ArticleCard = ({ArticleTitle,ArticleTopic,Category,PublishedDate,AuthorImage,AuthorName}) => {
+const ArticleCard = ({ArticleTitle,ArticleTopic,Category,PublishedDate,AuthorImage,AuthorName, onClick}) => {
   return (
-    <div className='h-[220px] w-[1000px] bg-white rounded-[14px] flex justify-between items-center overflow-hidden'>
+    <div className='h-[220px] w-[1000px] bg-white rounded-[14px] flex justify-between items-center overflow-hidden cursor-pointer' onClick={onClick}>
         <div className="h-[210px] w-[700px] flex justify-center items-center">
             <div className="h-[190px] w-[680px]">
                 <div className="h-[42px] w-[560px] text-[15px] font-semibold">{ArticleTitle}</div>

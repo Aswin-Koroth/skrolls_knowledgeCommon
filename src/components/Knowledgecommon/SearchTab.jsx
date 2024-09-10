@@ -10,7 +10,6 @@ const SerachTab = ({ filter = true}) => {
           <input className='ml-2' type="text" placeholder='search...' />
         </div>
 
-        {/* Conditionally render filter section based on the `filter` prop */}
         {filter && (
           <div className="h-[20px] w-[100px] flex">
             <img src={FilterIcon} alt="Filter icon" />

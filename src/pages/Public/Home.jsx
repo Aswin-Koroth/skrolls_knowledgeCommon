@@ -5,7 +5,9 @@ import Image2 from '@/assets/knowledgeCommon.png';
 import Image3 from '@/assets/citizenScience.png';
 import Card from '@/components/LandingPage/Card'
 import LogoHeader from '@/components/Knowledgecommon/LogoHeader';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
+  const navigate = useNavigate(); 
   return (
     <div>
       <LogoHeader/>
@@ -24,6 +26,7 @@ const Home = () => {
           image={Image2}
           title="KNOWLEDGE COMMON"
           paragraph="Join us in revolutionising academic scholarship with accessible, efficient, and impactful institutional repositories. Let’s elevate your institution’s research presence together."  
+          onClick={() => navigate('/public/home')}  
           />
           <Card
           image={Image3}
