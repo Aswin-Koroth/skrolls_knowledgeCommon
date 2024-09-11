@@ -19,9 +19,9 @@ const CollegeCard = ({ HeroImg, Title, onClick }) => {
             alt="department icon"
           />
         </div>
-        <div className="h-[70px] w-[300px] bg-white rounded-[20px] mb-[10px] flex items-center">
+        <div className="h-[70px] w-[300px] bg-white hover:bg-slate-200 transition-colors delay-200 rounded-[20px] mb-[10px] flex items-center z-30 ">
           <p className="text-black text-[16px] font-bold mt-[10px] mb-[10px] ml-[14px] w-[260px]">{Title}</p>
-          <div className="h-[32px] w-[32px] bg-[#D9D9D9] flex items-center justify-center mr-[16px] rounded-[16px]">
+          <div className="h-[32px] w-[32px] flex items-center justify-center mr-[16px] rounded-[16px]">
             <img src={ArrowRight} alt="" />
           </div>
         </div>

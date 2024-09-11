@@ -9,9 +9,9 @@ const Card = ({image, title, paragraph, onClick}) => {
         <p className='h-full w-1/2 text-right flex pr-2 items-center text-white font-bold'>{title}</p>
       </div>
       <div className="w-full h-[125px] bg-white pt-5 text-[12px]">{paragraph}</div>
-      <div className="w-full h-[55px] bg-black hover:bg-gray-800 cursor-pointer rounded-lg flex " onClick={onClick}>
-        <p className='h-[55px] w-[218px] flex justify-center items-center text-white'>GO</p>
-        <div className="h-[55px] w-[55px] flex justify-center items-center"><img src={Arrow} alt="arrow" /></div>
+      <div className="w-full h-[55px] bg-black hover:bg-gray-800 cursor-pointer rounded-lg flex relative" onClick={onClick}>
+        <p className='h-[55px] w-full flex justify-center items-center text-white '>GO</p>
+        <div className="h-[55px] w-[55px] flex justify-center items-center absolute right-0"><img src={Arrow} alt="arrow" /></div>
         </div>
     </div>
     </div>

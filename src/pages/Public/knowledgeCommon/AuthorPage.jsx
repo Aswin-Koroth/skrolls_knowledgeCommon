@@ -54,13 +54,13 @@ const AuthorPage = () => {
           <div className="h-[69px] w-[441px]">
             <div className="flex h-[69px] w-full items-center justify-center rounded-[18px] bg-white">
               <div className="flex h-[37px] w-[387px] justify-between">
-                <div className="item-center flex h-[36px] w-[170px] justify-center overflow-hidden rounded-[18px] border-[2px] bg-white">
+                <div className="item-center h-[36px] w-[170px] flex justify-center items-center overflow-hidden rounded-[18px] border-[2px]">
                   <img
-                    className="h-[24] w-[69px]"
+                    className="h-[24px] w-[69px]"
                     src={CitizenScience}
                     alt=""
                   />
-                  <p className="mt-[5px] h-[24px] text-[12px] font-bold">
+                  <p className="h-full w-[110px] text-[12px] font-bold  flex items-center justify-center ml-[-25px]">
                     Citizen Science
                   </p>
                 </div>

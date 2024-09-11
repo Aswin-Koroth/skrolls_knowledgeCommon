@@ -61,7 +61,7 @@ const ArticlePage = () => {
                             <div className="w-full h-[40px] "><p className='text-[12px] font-semibold py-[3px] break-words'>Supplementary_Data_Innovative_Strategies.pdf</p></div>
                             <div className="h-[65px] w-[full] mt-[8px]">
                                 <p className='text-[10px] font-light'>128kb</p>
-                                <div className="h-[50px] w-[180px] bg-[#982B35] rounded-[6px] flex justify-center items-center text-[10px] font-semibold text-[#fff]">Download</div>
+                                <div className="h-[50px] w-[180px] bg-[#982B35] hover:bg-[#b63340] transition-colors delay-200 rounded-[6px] flex justify-center items-center text-[10px] font-semibold text-[#fff]">Download</div>
                             </div>
                         </div>
                     </div>
