@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       screens:{
         xs: '375px',
+        'custom-lg': '1356px',
       },
       colors: {
         border: {

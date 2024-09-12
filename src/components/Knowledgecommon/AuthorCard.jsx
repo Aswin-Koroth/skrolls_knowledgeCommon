@@ -2,7 +2,7 @@ import React from 'react'
 import RightArrow from '@/assets/arrow_forward.svg';
 const AuthorCard = ({AuthorProfile,AuthorName,AuthorPosition, onClick}) => {
   return (
-    <div className="h-[350px] w-[330px] bg-white hover:shadow-lg transition-all duration-300 delay-200 rounded-[18px] flex justify-center items-center border-[2px] cursor-pointer" onClick={onClick}>
+    <div className="h-[350px] w-[330px] bg-white hover:shadow-lg transition-all delay-200 rounded-[18px] flex justify-center items-center border-[2px] cursor-pointer" onClick={onClick}>
         <div className="h-[330px] w-[310px] flex-col justify-center items-center ">
             <div className="h-[257px] w-[310px] rounded-[10px] overflow-hidden"><img className = "h-full w-full object-cover" src={AuthorProfile} alt="" /></div>
             <div className="h-[60px] w-full mt-[5px] flex" >

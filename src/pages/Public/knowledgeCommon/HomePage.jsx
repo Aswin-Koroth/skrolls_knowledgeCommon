@@ -24,7 +24,7 @@ const HomePage = () => {
         <div className="h-[50px] w-full flex justify-center items-center">      
           <TabsList className='h-[40px] w-[900px] border-b-2 border-b-slate-300 bg-transparent flex justify-center gap-1 mt-[-40px]'>
           <div
-            className={`h-[40px] w-[100px] flex items-end justify-end cursor-pointer ${
+            className={`h-[40px] w-[100px] flex items-center justify-end cursor-pointer ${
               activeTab === 'department' ? 'border-b-2 border-b-slate-700 font-bold text-black' : ''
             }`}
             onClick={() => handleTabChange('department')}>
