@@ -28,7 +28,7 @@ const HomePage = () => {
               activeTab === 'department' ? 'border-b-2 border-b-slate-700 font-bold text-black' : ''
             }`}
             onClick={() => handleTabChange('department')}>
-            <TabsTrigger className='' value="department">Department</TabsTrigger>
+            <TabsTrigger className='h-[40px]'  value="department">Department</TabsTrigger>
           </div>
 
           <div
@@ -36,12 +36,12 @@ const HomePage = () => {
               activeTab === 'author' ? 'border-b-2 border-b-slate-700 font-bold text-black' : ''
             }`}
             onClick={() => handleTabChange('author')}>
-            <TabsTrigger value="author">Author</TabsTrigger>
+            <TabsTrigger className='h-[40px]' value="author">Author</TabsTrigger>
           </div>
           </TabsList>
         </div>
         <TabsContent className=' w-full flex justify-center' value="department"><DepartmentSection/></TabsContent>
-        <TabsContent className=' w-full flex justify-center' value="author"><AuthorSection /></TabsContent>
+        <TabsContent className=' w-full flex justify-center' value="author"><AuthorSection/></TabsContent>
       </Tabs>
 
       </div>

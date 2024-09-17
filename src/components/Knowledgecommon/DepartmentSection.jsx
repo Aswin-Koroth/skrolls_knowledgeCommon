@@ -10,7 +10,7 @@ const DepartmentSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 custom-lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 bg-yellow-300 w-auto h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 custom-lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 w-auto h-full">
     <CollegeCard
       HeroImg={It}
       Title="Department of Information Technology"
