@@ -6,7 +6,7 @@ const CollegeCard = ({ HeroImg, Title, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="w-[340px] h-[340px] bg-white rounded-[20px] relative cursor-pointer before:content-[''] before:absolute before:h-[286px] before:w-full before:border-l-[4px] before:border-red-500 flex justify-center items-center"
+      className="w-[340px] h-[340px] bg-white rounded-[20px] relative cursor-pointer before:content-[''] before:absolute before:h-[286px] before:w-full before:border-l-[4px] before:border-red-500 flex justify-center items-center hover:shadow-lg transition-all delay-200"
     >
       <div
         className="w-[320px] h-[320px] bg-violet-950 rounded-[15px] flex flex-col items-center justify-center"
@@ -19,7 +19,7 @@ const CollegeCard = ({ HeroImg, Title, onClick }) => {
             alt="department icon"
           />
         </div>
-        <div className="h-[70px] w-[300px] bg-white hover:bg-slate-200 transition-colors delay-200 rounded-[20px] mb-[10px] flex items-center z-30 ">
+        <div className="h-[70px] w-[300px] bg-white rounded-[20px] mb-[10px] flex items-center z-30 ">
           <p className="text-black text-[16px] font-bold mt-[10px] mb-[10px] ml-[14px] w-[260px]">{Title}</p>
           <div className="h-[32px] w-[32px] flex items-center justify-center mr-[16px] rounded-[16px]">
             <img src={ArrowRight} alt="" />
