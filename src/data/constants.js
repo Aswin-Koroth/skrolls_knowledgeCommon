@@ -34,6 +34,26 @@ const ADMIN_NAV_LIST = [
   },
 ];
 
+
+const LIBRARIAN_NAV_LIST = [
+  {
+    label: 'Dashboard',
+    link: '/librarian/dashboard',
+    icon: settings_icon,
+    type: 'bottom',
+  },
+  { label: 'Submission', link: '/librarian/submission', icon: settings_icon },
+  { label: 'User', link: '/librarian/user', icon: settings_icon },
+  { label: 'chat', link: '/librarian/chat', icon: settings_icon },
+  { label: 'Reports & Analysis', link: '/librarian/report', icon: settings_icon },
+  {
+    label: 'Settings',
+    link: '/librarian/settings',
+    icon: settings_icon,
+    sep: true,
+  },
+];
+
 const CONTENTS_TABLE_HEADERS = [];
 const USERS_TABLE_HEADERS = [];
 const COLLEGES_TABLE_HEADERS = [];
@@ -154,4 +174,4 @@ const products = [
   },
 ];
 
-export { ADMIN_NAV_LIST, products, modals };
+export { ADMIN_NAV_LIST,LIBRARIAN_NAV_LIST, products, modals };

@@ -6,7 +6,14 @@ const Home = lazy(() => import('./pages/Public/Home'));
 
 // const PublicLayout = lazy(() => import('./layouts/PublicLayout'));
 // const UserLayout = lazy(() => import('./layouts/UserLayout'));
-// const LibrarianLayout = lazy(() => import('./layouts/LibrarianLayout'));
+const LibrarianLayout = lazy(() => import('./layouts/LibrarianLayout'));
+const LibrarianDashboard = lazy(() => import('./pages/Librarian/LibrarianDashboard'));
+const LibrarianChat = lazy(() =>import('./pages/Librarian/LibrarianChat'));
+const LibrarianSubmission = lazy(() =>import('./pages/Librarian/LibrarianSubmission'));
+const LibrarianReportAndAnalysis = lazy(() =>import('./pages/Librarian/LibrarianReportAndAnalysis'));
+const LibrarianUser = lazy(() =>import('./pages/Librarian/LibrarianUser')); 
+const LibrarianSettings = lazy(() =>import('./pages/Librarian/LibrarianSettings')); 
+
 const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
 
 const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'));
@@ -40,9 +47,14 @@ function App() {
           <Route path="/user/profile" element={<UserProfile />} />
         </Route> */}
 
-      {/* <Route element={<LibrarianLayout />}>
-          <Route path="/librarian" element={<LibrarianDashboard />} />
-        </Route> */}
+      <Route element={<LibrarianLayout />}>
+          <Route path="/librarian/dashboard" element={<LibrarianDashboard />} />
+          <Route path="/librarian/submission" element={<LibrarianSubmission />} />
+          <Route path="/librarian/user" element={<LibrarianUser />} />
+          <Route path="/librarian/chat" element={<LibrarianChat />} />
+          <Route path="/librarian/report" element={<LibrarianReportAndAnalysis />} />
+          <Route path="/librarian/settings" element={<LibrarianSettings />} />
+         </Route>
 
       <Route element={<AdminLayout />}>
         <Route path="/admin" element={<AdminDashboard />} />
