@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "text": "Hello, how are you?",
+    "sentByMe": false,
+    "timestamp": "2024-08-01T10:00:00Z",
+    "sender": "Alice"
+  },
+  {
+    "id": 2,
+    "text": "I'm good, thanks! How about you?",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:01:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 3,
+    "text": "I'm doing well, just working on a project.",
+    "sentByMe": false,
+    "timestamp": "2024-08-01T10:02:00Z",
+    "sender": "Alice"
+  },
+  {
+    "id": 4,
+    "text": "That sounds interesting! What is it about?",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:03:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 5,
+    "text": "It's a web application for managing tasks.",
+    "sentByMe": false,
+    "timestamp": "2024-08-01T10:04:00Z",
+    "sender": "Alice"
+  },
+  {
+    "id": 6,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 7,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 8,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 9,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 10,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 11,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 12,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 13,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-08-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 14,
+    "text": "if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-09-01T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 15,
+    "text": "Great! Let me know if you need any help.",
+    "sentByMe": false,
+    "timestamp": "2024-09-02T10:05:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 16,
+    "text": "hey Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-09-04T10:06:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 18,
+    "text": "what Great! Let me know if you need any help.",
+    "sentByMe": true,
+    "timestamp": "2024-09-04T10:15:00Z",
+    "sender": "Me"
+  },
+  {
+    "id": 19,
+    "text": "hey guys how are you.",
+    "sentByMe": true,
+    "timestamp": "2024-08-05T10:15:00Z",
+    "sender": "Me"
+  }
+]

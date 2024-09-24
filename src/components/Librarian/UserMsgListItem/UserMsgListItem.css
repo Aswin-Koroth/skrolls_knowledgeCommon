@@ -1,0 +1,36 @@
+.usermsglist-item {
+  border-radius: 20px; 
+}
+.usermsglist-item:hover{
+  background-color: #fff8f8; 
+}
+.clickedmsg {
+  background-color: var(--color-secondary);
+}
+.clickedmsg:hover {
+  background-color: #fddfdf;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.user-final-msg {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.last-msg-time {
+  font-size: 0.6rem;
+  color: var(--color-text-secondary);
+}
+
+.unseen-msg-count {
+  /* width: 100%; */
+  width: fit-content;
+  font-size: 0.6rem;
+  background: var(--color-primary);
+  color: var(--color-bg-secondary);
+}
