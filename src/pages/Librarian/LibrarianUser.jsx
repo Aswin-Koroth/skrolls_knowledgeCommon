@@ -1,33 +1,19 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { products } from '@/data/constants';
+import { users } from '@/data/constants';
 import { TableNav, TableToolbar, Table } from '@/components/Table';
-import search_icon from '@/assets/search.svg';
-import approve_icon from '@/assets/search.svg';
-import reject_icon from '@/assets/search.svg';
+import view_icon from '@/assets/visibility.svg';
 import { useModal } from '@/context/ModalContext';
 
 const LibrarianUser = () => {
-  const [tableData, setTableData] = useState(products);
+  const [tableData, setTableData] = useState(users);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const { setIsSubmissionPanelOpen } = useModal();
 
   const columns = useMemo(
     () => [
-      { header: 'Product name', key: 'productName' },
-      { header: 'Category', key: 'category' },
-      { header: 'Brand', key: 'brand' },
-      {
-        header: 'Description',
-        key: 'description',
-        className: 'max-w-xs truncate',
-        render: (item) => item.description,
-      },
-      {
-        header: 'Price',
-        key: 'price',
-        render: (item) => `$${item.price.toFixed(2)}`,
-      },
+      { header: 'Users', key: 'name' },
+      { header: 'Status', key: 'status' }
     ],
     []
   );
@@ -46,11 +32,9 @@ const LibrarianUser = () => {
 
   const actions = useMemo(
     () => [
-      { label: 'View', onClick: handleView, icon: search_icon },
-      { label: 'Approve', onClick: handleApprove, icon: approve_icon },
-      { label: 'Reject', onClick: handleReject, icon: reject_icon },
+      { label: 'View', onClick: handleView, icon: view_icon }
     ],
-    [handleView, handleApprove, handleReject]
+    [handleView]
   );
 
   const setTableDataCallback = useCallback((newData) => {
@@ -71,7 +55,7 @@ const LibrarianUser = () => {
       <h1 className="mb-4 text-xl font-bold">User Management</h1>
       <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
         <TableToolbar
-          data={products}
+          data={users}
           setTableData={setTableDataCallback}
           searchFields={[
             'productName',

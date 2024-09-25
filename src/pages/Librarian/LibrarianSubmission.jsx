@@ -1,14 +1,14 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { modals, products } from '@/data/constants';
+import { modals, submission } from '@/data/constants';
 import { TableNav, TableToolbar, Table } from '@/components/Table';
-import search_icon from '@/assets/search.svg';
-import approve_icon from '@/assets/search.svg';
-import reject_icon from '@/assets/search.svg';
+import view_icon from '@/assets/visibility.svg';
+import edit_icon from '@/assets/edit.svg';
+import delete_icon from '@/assets/delete.svg';
 import { useModal } from '@/context/ModalContext';
 import { Overlays } from '@/components/Overlays';
 
 const LibrarianSubmission = () => {
-    const [tableData, setTableData] = useState(products);
+    const [tableData, setTableData] = useState(submission);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
     // const { setIsSubmissionPanelOpen } = useModal();
@@ -16,20 +16,9 @@ const LibrarianSubmission = () => {
   
     const columns = useMemo(
       () => [
-        { header: 'Product name', key: 'productName' },
-        { header: 'Category', key: 'category' },
-        { header: 'Brand', key: 'brand' },
-        {
-          header: 'Description',
-          key: 'description',
-          className: 'max-w-xs truncate',
-          render: (item) => item.description,
-        },
-        {
-          header: 'Price',
-          key: 'price',
-          render: (item) => `$${item.price.toFixed(2)}`,
-        },
+        { header: 'Title', key: 'title' },
+        { header: 'Type', key: 'type' },
+        { header: 'Status', key: 'status' },
       ],
       []
     );
@@ -49,9 +38,9 @@ const LibrarianSubmission = () => {
   
     const actions = useMemo(
       () => [
-        { label: 'View', onClick: handleView, icon: search_icon },
-        { label: 'Approve', onClick: handleApprove, icon: approve_icon },
-        { label: 'Reject', onClick: handleReject, icon: reject_icon },
+        { label: 'View', onClick: handleView, icon: view_icon },
+        { label: 'Edit', onClick: handleApprove, icon: edit_icon },
+        { label: 'Delete', onClick: handleReject, icon: delete_icon },
       ],
       [handleView, handleApprove, handleReject]
     );
@@ -75,7 +64,7 @@ const LibrarianSubmission = () => {
         <h1 className="mb-4 text-xl font-bold">Submission Management</h1>
         <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
           <TableToolbar
-            data={products}
+            data={submission}
             setTableData={setTableDataCallback}
             // searchFields={[
             //   'productName',
