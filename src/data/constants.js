@@ -1,4 +1,12 @@
 import settings_icon from '../assets/settings.svg';
+import dashboard_icon from '../assets/icons/dashboard.svg';
+import university_icon from '../assets/icons/university.svg';
+import content_icon from '../assets/icons/video-playlist.svg';
+import user_icon from '../assets/icons/user-group.svg';
+import report_icon from '../assets/icons/list-clipboard.svg';
+import library_icon from '../assets/icons/library.svg';
+import department_icon from '../assets/icons/archive.svg';
+import chat_icon from '../assets/icons/comment.svg';
 
 const modals = {
   SUBMISSION_PANEL: 'add_submissions_panel',
@@ -9,23 +17,23 @@ const ADMIN_NAV_LIST = [
   {
     label: 'Dashboard',
     link: '/admin',
-    icon: settings_icon,
+    icon: dashboard_icon,
     type: 'bottom',
   },
-  { label: 'Content', link: '/admin/contents_list', icon: settings_icon },
+  { label: 'Content', link: '/admin/contents_list', icon: content_icon },
   {
     label: 'University',
     link: '/admin/universities_list',
-    icon: settings_icon,
+    icon: university_icon,
   },
   {
     label: 'College / Librarian ',
     link: '/admin/colleges_list',
-    icon: settings_icon,
+    icon: library_icon,
   },
-  { label: 'Department', link: '/admin/departments_list', icon: settings_icon },
-  { label: 'User', link: '/admin/users_list', icon: settings_icon },
-  { label: 'Reports & Analysis', link: '/admin/reports', icon: settings_icon },
+  { label: 'Department', link: '/admin/departments_list', icon: department_icon },
+  { label: 'User', link: '/admin/users_list', icon: user_icon},
+  { label: 'Reports & Analysis', link: '/admin/reports', icon: report_icon },
   {
     label: 'Settings',
     link: '/admin/settings',
@@ -39,13 +47,13 @@ const LIBRARIAN_NAV_LIST = [
   {
     label: 'Dashboard',
     link: '/librarian/dashboard',
-    icon: settings_icon,
+    icon: dashboard_icon,
     type: 'bottom',
   },
-  { label: 'Submission', link: '/librarian/submission', icon: settings_icon },
-  { label: 'User', link: '/librarian/user', icon: settings_icon },
-  { label: 'chat', link: '/librarian/chat', icon: settings_icon },
-  { label: 'Reports & Analysis', link: '/librarian/report', icon: settings_icon },
+  { label: 'Submission', link: '/librarian/submission', icon: content_icon },
+  { label: 'User', link: '/librarian/user', icon: user_icon },
+  { label: 'chat', link: '/librarian/chat', icon: chat_icon },
+  { label: 'Reports & Analysis', link: '/librarian/report', icon: report_icon },
   {
     label: 'Settings',
     link: '/librarian/settings',
