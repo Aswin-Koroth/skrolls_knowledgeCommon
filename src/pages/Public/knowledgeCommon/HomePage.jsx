@@ -1,52 +1,47 @@
 import LogoHeader from '@/components/Knowledgecommon/LogoHeader';
-import React from 'react'
+import React from 'react';
 import CollegeHeader from '@/components/Knowledgecommon/CollegeHeader';
 import SearchTab from '@/components/Knowledgecommon/SearchTab';
 import DepartmentSection from '@/components/Knowledgecommon/DepartmentSection';
 import AuthorSection from '@/components/Knowledgecommon/AuthorSection';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from 'react';
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState('department'); 
-
-  const handleTabChange = (value) => {
-    setActiveTab(value); 
-  };
   return (
     <div>
-      <LogoHeader/>
-      <CollegeHeader/>
-      <div className="h-[600px] w-[full] bg-[#F5F5F5]">
-      <SearchTab/>
-      <Tabs defaultValue="department" >
-        <div className="h-[50px] w-full flex justify-center items-center">      
-          <TabsList className='h-[40px] w-[900px] border-b-2 border-b-slate-300 bg-transparent flex justify-center gap-1 mt-[-40px]'>
-          <div
-            className={`h-[40px] w-[100px] flex items-center justify-end cursor-pointer ${
-              activeTab === 'department' ? 'border-b-2 border-b-slate-700 font-bold text-black' : ''
-            }`}
-            onClick={() => handleTabChange('department')}>
-            <TabsTrigger className='h-[40px]'  value="department">Department</TabsTrigger>
-          </div>
+      <LogoHeader />
+      <CollegeHeader />
+      <div className="bg-bg-muted h-full w-full">
+        <SearchTab />
 
-          <div
-            className={`h-[40px] w-[100px] flex items-center justify-center cursor-pointer ${
-              activeTab === 'author' ? 'border-b-2 border-b-slate-700 font-bold text-black' : ''
-            }`}
-            onClick={() => handleTabChange('author')}>
-            <TabsTrigger className='h-[40px]' value="author">Author</TabsTrigger>
-          </div>
+        <Tabs
+          defaultValue="department"
+          className="flex w-full flex-col items-center"
+        >
+          <TabsList className="mb-6 justify-between rounded-none">
+            <TabsTrigger
+              value="department"
+              className="w-28 px-4 text-base data-[state=active]:border-b-2 data-[state=active]:border-black"
+            >
+              Department
+            </TabsTrigger>
+            <TabsTrigger
+              value="author"
+              className="w-28 px-4 text-base data-[state=active]:border-b-2 data-[state=active]:border-black"
+            >
+              Author
+            </TabsTrigger>
           </TabsList>
-        </div>
-        <TabsContent className=' w-full flex justify-center' value="department"><DepartmentSection/></TabsContent>
-        <TabsContent className=' w-full flex justify-center' value="author"><AuthorSection/></TabsContent>
-      </Tabs>
-
+          <TabsContent value="department" className="w-full px-20">
+            <DepartmentSection />
+          </TabsContent>
+          <TabsContent value="author" className="w-full px-20">
+            <AuthorSection />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

@@ -5,7 +5,7 @@ import AuthorCard from '@/components/Knowledgecommon/AuthorCard';
 const AuthorSection = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex h-full w-[1000px] flex-wrap gap-[5px]">
+    <div className="flex flex-wrap content-center items-center justify-center gap-10">
       <AuthorCard
         AuthorName="Dr. Bonnie Barstow "
         AuthorPosition="Student"

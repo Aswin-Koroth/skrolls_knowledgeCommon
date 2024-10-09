@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -14,84 +13,33 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-       
         '2xl': '1400px',
       },
     },
     extend: {
-      screens:{
-        xs: '375px',
-        'custom-lg': '1356px',
-      },
       colors: {
-        border: {
-          DEFAULT: 'hsl(var(--border-pri))',
-          sec: 'hsl(var(--border-sec))',
-        },
-        input: 'hsl(var(--input))',
-        text: {
-          DEFAULT: 'hsl(var(--text-pri))',
-          sec: 'hsl(var(--text-sec))',
-          mut: 'hsl(var(--text-mut))',
-          fade: 'hsl(var(--text-fade))',
-        },
-        ring: 'hsl(var(--ring))',
-        background: {
-          DEFAULT: 'hsl(var(--background))',
-          sec: 'hsl(var(--background-sec))',
-          mut: 'hsl(var(--background-mut))',
-        },
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
+        primary: '#f36760',
+        secondary: '#ffeae9',
+        'bg-primary': '#f3f3f3',
+        'bg-secondary': '#ffffff',
+        'bg-muted': '#f5f5f6',
+        'bg-muted-transparent': '#e7e7e740',
+        'bg-transparent': '#000000b8',
+        'bg-transparent-muted': '#00000066',
+        textarea: '#f6f6ff',
+        'border-primary': '#a3a3a3',
+        'border-muted': '#dddddd',
+        'text-primary': '#000000',
+        'text-secondary': '#6c757d',
+        'text-muted': '#c6c6c6',
+        'text-hard': '#3c3c3c',
+        shadow: 'rgba(0, 0, 0, 0.05)',
+        grey: '#999',
+        white: '#fff',
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+      transitionProperty: {
+        padding: 'padding',
+        margin: 'margin',
       },
     },
   },
