@@ -6,7 +6,7 @@ const Navpanel = ({ navList }) => {
   const location = useLocation();
 
   return (
-    <nav className="flex h-screen w-[300px] min-w-[170px] max-w-[20%] flex-col items-start justify-start border-r-2 border-border bg-background-sec pt-10 max-sm:hidden">
+    <nav className="flex h-screen w-[300px] min-w-[170px] max-w-[20%] flex-col items-start justify-start border-r-2 border-border bg-white pt-10 max-sm:hidden">
       <img src={logo} alt="logo" className="h-24 self-center pb-10" />
       {navList.map((item, index) => (
         <NavpanelItem

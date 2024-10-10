@@ -13,7 +13,7 @@ const Attatchment = () => {
       <div className="flex flex-col">
         <div className="text-sm font-semibold dark:text-white">Book1.pdf</div>
         <div className="text-xs text-text-sec dark:text-gray-300">123kb</div>
-        <Button className="mt-auto gap-2 rounded-sm bg-primary dark:bg-red-500 dark:hover:bg-red-400 hover:bg-red-400">
+        <Button className="mt-auto gap-2 rounded-sm bg-primary text-white hover:bg-red-400 dark:bg-red-500 dark:hover:bg-red-400">
           <img src={download_icon} alt="Download" className="h-5" />
           <div className="h-4 w-[1px] bg-white"></div>
           Download

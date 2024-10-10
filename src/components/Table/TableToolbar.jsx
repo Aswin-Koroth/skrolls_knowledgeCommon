@@ -18,7 +18,6 @@ const TableToolbar = ({ data, setTableData }) => {
     setActiveDropdown(null)
   );
 
-
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
@@ -37,7 +36,7 @@ const TableToolbar = ({ data, setTableData }) => {
     setTableData(filteredData);
   };
   return (
-    <div className="flex flex-col items-center justify-between space-y-3 bg-background py-4 md:flex-row md:space-x-4 md:space-y-0">
+    <div className="flex flex-col items-center justify-between space-y-3 bg-bg-muted py-4 md:flex-row md:space-x-4 md:space-y-0">
       <div className="w-full md:w-1/2">
         <form className="flex items-center">
           <div className="relative w-full">
@@ -47,7 +46,7 @@ const TableToolbar = ({ data, setTableData }) => {
             <input
               type="text"
               id="simple-search"
-              className="dark:focus:ring-primary-500 dark:focus:border-primary-500 block h-[37px] w-full border-[1px] border-gray-200 bg-gray-50 p-2 pl-10 text-sm text-gray-900 placeholder-text-fade focus:border-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+              className="dark:focus:ring-primary-500 dark:focus:border-primary-500 placeholder-text-fade block h-[37px] w-full border-[1px] border-gray-400 bg-gray-50 p-2 pl-10 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
               placeholder="Search"
               required=""
               value={searchQuery}

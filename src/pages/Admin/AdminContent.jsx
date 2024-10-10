@@ -72,7 +72,7 @@ const AdminContent = () => {
 
   return (
     <>
-      <section className="static flex h-[calc(100%-80px)] flex-col p-10 pb-2 max-sm:p-5 max-xs:p-2">
+      <section className="max-xs:p-2 static flex h-[calc(100%-80px)] flex-col bg-bg-muted p-10 pb-2 max-sm:p-5">
         <h1 className="mb-4 text-xl font-bold">Content Management</h1>
         <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
           <TableToolbar

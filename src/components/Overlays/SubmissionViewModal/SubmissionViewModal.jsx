@@ -1,9 +1,9 @@
 import { useModal } from '@/context/ModalContext';
 import useClickOutside from '@/hooks/useClickOutside';
-import { useRef } from 'react';
 import { modals } from '@/data/constants';
 import { cn } from '@/lib/utils';
 import Button from './Button';
+
 import EditIcon from '@/assets/EditIcon';
 import TrashIcon from '@/assets/TrashIcon';
 import CheckIcon from '@/assets/CheckIcon';
@@ -23,7 +23,7 @@ const SubmissionViewModal = () => {
     <div
       ref={modalRef}
       className={cn(
-        'max-h-[95%] max-w-[90%] overflow-y-auto rounded-sm bg-background-sec px-7 pt-7 dark:bg-gray-900 max-lg:w-[80%] lg:w-[70%]',
+        'max-h-[95%] max-w-[90%] overflow-y-auto rounded-sm bg-bg-secondary px-7 pt-7 dark:bg-gray-900 max-lg:w-[80%] lg:w-[70%]',
         {
           block: isModalOpen(modals.VIEW_MODAL),
           hidden: !isModalOpen(modals.VIEW_MODAL),
@@ -61,16 +61,16 @@ const SubmissionViewModal = () => {
       </TextContainer>
       <H1>Authors</H1>
       <TextContainer>
-        <Button className="dark:bg-white dark:text-text">A. Majeed</Button>
-        <Button className="dark:bg-white dark:text-text"> Anurag T K</Button>
-        <Button className="dark:bg-white dark:text-text">Ishaque Risan</Button>
+        <Button className="dark:text-text dark:bg-white">A. Majeed</Button>
+        <Button className="dark:text-text dark:bg-white"> Anurag T K</Button>
+        <Button className="dark:text-text dark:bg-white">Ishaque Risan</Button>
       </TextContainer>
       <H1>Attatchments</H1>
       <TextContainer>
         <Attatchment />
         <Attatchment />
       </TextContainer>
-      <section className="border-1 sticky bottom-0 flex gap-2 border-t-2 bg-background-sec py-3 dark:border-gray-800 dark:bg-gray-900 max-sm:gap-5">
+      <section className="border-1 sticky bottom-0 flex gap-2 border-t-2 bg-bg-secondary py-3 dark:border-gray-800 dark:bg-gray-900 max-sm:gap-5">
         <Button className="bg-green-200 font-semibold text-green-600 hover:bg-opacity-50 dark:hover:bg-green-300">
           <CheckIcon className="t h-4" />
           Approve
@@ -79,7 +79,7 @@ const SubmissionViewModal = () => {
           <TrashIcon className="h-4" />
           Delete
         </Button>
-        <Button className="bg-black font-semibold hover:bg-opacity-50 dark:bg-white dark:text-black dark:hover:bg-gray-300">
+        <Button className="bg-black font-semibold text-white hover:bg-opacity-50 dark:bg-white dark:text-black dark:hover:bg-gray-300">
           <EditIcon className="h-4" />
           Edit
         </Button>
@@ -94,7 +94,7 @@ const H1 = ({ children }) => {
 
 const TextContainer = ({ children }) => {
   return (
-    <div className="mb-4 mt-1 flex flex-wrap gap-1 rounded-sm bg-background-mut p-2 text-sm text-text-sec dark:bg-gray-700 dark:text-gray-100">
+    <div className="text-text-sec mb-4 mt-1 flex flex-wrap gap-1 rounded-sm bg-bg-muted p-2 text-sm dark:bg-gray-700 dark:text-gray-100">
       {children}
     </div>
   );

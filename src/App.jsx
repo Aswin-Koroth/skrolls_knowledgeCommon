@@ -1,31 +1,25 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
 import PublicLayout from './layouts/PublicLayout';
-
-const Home = lazy(() => import('./pages/Public/Home'));
-
-// const PublicLayout = lazy(() => import('./layouts/PublicLayout'));
-// const UserLayout = lazy(() => import('./layouts/UserLayout'));
 const LibrarianLayout = lazy(() => import('./layouts/LibrarianLayout'));
-const LibrarianDashboard = lazy(() => import('./pages/Librarian/LibrarianDashboard'));
-const LibrarianChat = lazy(() =>import('./pages/Librarian/LibrarianChat'));
-const LibrarianSubmission = lazy(() =>import('./pages/Librarian/LibrarianSubmission'));
-const LibrarianReportAndAnalysis = lazy(() =>import('./pages/Librarian/LibrarianReportAndAnalysis'));
-const LibrarianUser = lazy(() =>import('./pages/Librarian/LibrarianUser')); 
-const LibrarianSettings = lazy(() =>import('./pages/Librarian/LibrarianSettings')); 
-
 const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
 
-const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'));
-const AdminContent = lazy(() => import('./pages/Admin/AdminContent'));
-const AdminUniversity = lazy(() => import('./pages/Admin/AdminUniversity'));
-const AdminCollege = lazy(() => import('./pages/Admin/AdminCollege'));
-const AdminDepartment = lazy(() => import('./pages/Admin/AdminDepartment'));
-const AdminUser = lazy(() => import('./pages/Admin/AdminUser'));
-const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
-const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
-const PublicHome = lazy(() => import('./pages/Public/Home'));
-const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
+const LibrarianUser = lazy(() => import('./pages/Librarian/LibrarianUser'));
+const LibrarianChat = lazy(() => import('./pages/Librarian/LibrarianChat'));
+const LibrarianDashboard = lazy(
+  () => import('./pages/Librarian/LibrarianDashboard')
+);
+const LibrarianSubmission = lazy(
+  () => import('./pages/Librarian/LibrarianSubmission')
+);
+const LibrarianReportAndAnalysis = lazy(
+  () => import('./pages/Librarian/LibrarianReportAndAnalysis')
+);
+const LibrarianSettings = lazy(
+  () => import('./pages/Librarian/LibrarianSettings')
+);
+
 const ResultPage = lazy(
   () => import('./pages/Public/knowledgeCommon/ResultPage')
 );
@@ -35,26 +29,38 @@ const ArticlePage = lazy(
 const AuthorPage = lazy(
   () => import('./pages/Public/knowledgeCommon/AuthorPage')
 );
+
+const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'));
+const AdminContent = lazy(() => import('./pages/Admin/AdminContent'));
+const AdminUniversity = lazy(() => import('./pages/Admin/AdminUniversity'));
+const AdminCollege = lazy(() => import('./pages/Admin/AdminCollege'));
+const AdminDepartment = lazy(() => import('./pages/Admin/AdminDepartment'));
+const AdminUser = lazy(() => import('./pages/Admin/AdminUser'));
+const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
+const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
+
+const PublicHome = lazy(() => import('./pages/Public/Home'));
+const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
+
 function App() {
   return (
     <Routes>
-      {/* <Route element={<PublicLayout />}>
-          <Route path="/" element={<Home />} />
-        </Route> */}
-
       {/* <Route element={<UserLayout />}>
           <Route path="/user" element={<UserDashboard />} />
           <Route path="/user/profile" element={<UserProfile />} />
         </Route> */}
 
       <Route element={<LibrarianLayout />}>
-          <Route path="/librarian/dashboard" element={<LibrarianDashboard />} />
-          <Route path="/librarian/submission" element={<LibrarianSubmission />} />
-          <Route path="/librarian/user" element={<LibrarianUser />} />
-          <Route path="/librarian/chat" element={<LibrarianChat />} />
-          <Route path="/librarian/report" element={<LibrarianReportAndAnalysis />} />
-          <Route path="/librarian/settings" element={<LibrarianSettings />} />
-         </Route>
+        <Route path="/librarian" element={<LibrarianDashboard />} />
+        <Route path="/librarian/submission" element={<LibrarianSubmission />} />
+        <Route path="/librarian/user" element={<LibrarianUser />} />
+        <Route path="/librarian/chat" element={<LibrarianChat />} />
+        <Route
+          path="/librarian/report"
+          element={<LibrarianReportAndAnalysis />}
+        />
+        <Route path="/librarian/settings" element={<LibrarianSettings />} />
+      </Route>
 
       <Route element={<AdminLayout />}>
         <Route path="/admin" element={<AdminDashboard />} />
@@ -73,8 +79,8 @@ function App() {
         <Route path="/result" element={<ResultPage />} />
         <Route path="/article" element={<ArticlePage />} />
         <Route path="/authorPage" element={<AuthorPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

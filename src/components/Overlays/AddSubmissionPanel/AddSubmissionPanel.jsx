@@ -3,9 +3,12 @@ import settings_icon from '@/assets/settings.svg';
 import close_icon from '@/assets/close.svg';
 
 import { useModal } from '@/context/ModalContext';
+import { SUBMISSION_TYPES } from '@/data/constants';
 import { cn } from '@/lib/utils';
 import { modals } from '@/data/constants';
 import useClickOutside from '@/hooks/useClickOutside';
+import { AddContentFormDialog } from '@/components/Overlays/AddSubmissionPanel/AddContentFormDialog';
+import { DialogTrigger, Dialog, DialogContent } from '@/components/ui/dialog';
 
 const AddSubmissionPanel = () => {
   const { closeModal, isModalOpen } = useModal();
@@ -13,19 +16,6 @@ const AddSubmissionPanel = () => {
   const panelRef = useClickOutside(isModalOpen(modals.SUBMISSION_PANEL), () =>
     closeModal(modals.SUBMISSION_PANEL)
   );
-
-  // if (!isModalOpen(modals.SUBMISSION_PANEL)) return null;
-
-  const SUBMISSION_TYPES = [
-    'Article',
-    'Book',
-    'Thesis',
-    'Dissertation',
-    'Conference Proceedings',
-    'Presentations',
-    'Question Papers',
-    'Others',
-  ];
 
   return (
     <div
@@ -46,22 +36,31 @@ const AddSubmissionPanel = () => {
           closeModal(modals.SUBMISSION_PANEL);
         }}
       />
-      {SUBMISSION_TYPES.map((item) => (
-        <div
-          key={item}
-          className="group box-border flex h-16 cursor-pointer items-center gap-2 border-[1px] border-border-sec from-white via-white to-primary p-2 transition-all hover:border-primary hover:bg-gradient-to-r"
-        >
-          <img
-            src={settings_icon}
-            className="h-11 rounded-md bg-background-mut p-2 group-hover:bg-red-100"
-            alt={item}
-          />
-          <span className="group-hover:text-primary">{item}</span>
-          <span className="invisible ml-auto flex items-center gap-2 text-white group-hover:visible">
-            <img src={add_icon} alt="create" className="h-5" />
-            Create
-          </span>
-        </div>
+      {SUBMISSION_TYPES.map((item, index) => (
+        <Dialog key={index}>
+          <DialogTrigger asChild>
+            <div>
+              <div
+                key={item}
+                className="border-border-sec group box-border flex h-16 cursor-pointer items-center gap-2 border-[1px] from-white via-white to-primary p-2 transition-all hover:border-primary hover:bg-gradient-to-r"
+              >
+                <img
+                  src={settings_icon}
+                  className="h-11 rounded-md bg-bg-muted p-2 group-hover:bg-red-100"
+                  alt={item}
+                />
+                <span className="group-hover:text-primary">{item}</span>
+                <span className="invisible ml-auto flex items-center gap-2 text-white group-hover:visible">
+                  <img src={add_icon} alt="create" className="h-5" />
+                  Create
+                </span>
+              </div>
+            </div>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[700px]">
+            <AddContentFormDialog selection={item} />
+          </DialogContent>
+        </Dialog>
       ))}
     </div>
   );

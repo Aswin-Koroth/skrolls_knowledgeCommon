@@ -9,7 +9,7 @@ const NavpanelItem = (params) => {
       className={cn(
         'h-[60px] w-full cursor-pointer select-none border-l-4 hover:bg-text-fade',
         {
-          'border-primary bg-background': isSelected,
+          'bg-bg-muted border-primary': isSelected,
           'border-background-sec hover:border-text-fade': !isSelected,
           'mt-auto': seperation,
         },

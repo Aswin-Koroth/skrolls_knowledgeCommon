@@ -5,6 +5,17 @@ const modals = {
   VIEW_MODAL: 'view_submission_modal',
 };
 
+const SUBMISSION_TYPES = [
+  'Article',
+  'Book',
+  'Thesis',
+  'Dissertation',
+  'Conference Proceedings',
+  'Presentations',
+  'Question Papers',
+  'Others',
+];
+
 const ADMIN_NAV_LIST = [
   {
     label: 'Dashboard',
@@ -34,7 +45,6 @@ const ADMIN_NAV_LIST = [
   },
 ];
 
-
 const LIBRARIAN_NAV_LIST = [
   {
     label: 'Dashboard',
@@ -45,7 +55,11 @@ const LIBRARIAN_NAV_LIST = [
   { label: 'Submission', link: '/librarian/submission', icon: settings_icon },
   { label: 'User', link: '/librarian/user', icon: settings_icon },
   { label: 'chat', link: '/librarian/chat', icon: settings_icon },
-  { label: 'Reports & Analysis', link: '/librarian/report', icon: settings_icon },
+  {
+    label: 'Reports & Analysis',
+    link: '/librarian/report',
+    icon: settings_icon,
+  },
   {
     label: 'Settings',
     link: '/librarian/settings',
@@ -353,7 +367,13 @@ const report = [
   },
 ];
 
-
-
-
-export { ADMIN_NAV_LIST,LIBRARIAN_NAV_LIST, products, modals,submission,users,report };
+export {
+  ADMIN_NAV_LIST,
+  LIBRARIAN_NAV_LIST,
+  SUBMISSION_TYPES,
+  products,
+  modals,
+  submission,
+  users,
+  report,
+};
