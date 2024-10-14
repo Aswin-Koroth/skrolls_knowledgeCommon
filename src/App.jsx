@@ -26,6 +26,7 @@ const AdminReports = lazy(() => import('./pages/Admin/AdminReports'));
 const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
+const PublicMainPage = lazy(() => import('./pages/Public/knowledgeCommon/PublicMainPage'));
 const ResultPage = lazy(
   () => import('./pages/Public/knowledgeCommon/ResultPage')
 );
@@ -35,6 +36,7 @@ const ArticlePage = lazy(
 const AuthorPage = lazy(
   () => import('./pages/Public/knowledgeCommon/AuthorPage')
 );
+
 function App() {
   return (
     <Routes>
@@ -73,8 +75,12 @@ function App() {
         <Route path="/result" element={<ResultPage />} />
         <Route path="/article" element={<ArticlePage />} />
         <Route path="/authorPage" element={<AuthorPage />} />
+        <Route path="/PublicMainPage" element={<PublicMainPage/>} />
+        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
+
+
     </Routes>
   );
 }

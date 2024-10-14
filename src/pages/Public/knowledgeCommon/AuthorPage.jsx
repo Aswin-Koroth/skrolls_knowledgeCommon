@@ -1,5 +1,4 @@
 import LogoHeader from '@/components/Knowledgecommon/LogoHeader';
-import React from 'react';
 import Pattern from '@/assets/bg.png';
 import Author1 from '@/assets/author1.png';
 import CitizenScience from '@/assets/citizenScienceLogo.png';
