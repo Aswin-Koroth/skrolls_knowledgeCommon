@@ -11,8 +11,8 @@ import { ProfilePhoto } from '@/components/Librarian/Profilephoto/ProfilePhoto';
 import EmojiPicker from 'emoji-picker-react';
 import MessageBubble from '@/components/Librarian/MessageBubble';
 import sampleMessage from '@/components/Librarian/data/image_send';
-import { groupMessagesByDate } from '@/components/Librarian/groupMessagesByDate';
-import useClickOutside from '@/components/Librarian/useClickOutside';
+import { groupMessagesByDate } from '@/lib/groupMessagesByDate';
+import useClickOutside from '@/hooks/useClickOutside';
 
 const MessageBox = () => {
   const [open, setOpen] = useState(false);
@@ -150,7 +150,7 @@ const MessageBox = () => {
       >
         {Object.keys(groupedMessages).map((date) => (
           <div key={date}>
-            <div className="my-2 text-center text-xs text-text-secondary select-none">
+            <div className="my-2 select-none text-center text-xs text-text-secondary">
               {date}
             </div>
             {groupedMessages[date].map((message) => (

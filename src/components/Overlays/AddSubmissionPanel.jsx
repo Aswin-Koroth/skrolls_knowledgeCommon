@@ -7,7 +7,7 @@ import { SUBMISSION_TYPES } from '@/data/constants';
 import { cn } from '@/lib/utils';
 import { modals } from '@/data/constants';
 import useClickOutside from '@/hooks/useClickOutside';
-import { AddContentFormDialog } from '@/components/Overlays/AddSubmissionPanel/AddContentFormDialog';
+import { AddContentFormDialog } from '@/components/Overlays/AddContentFormDialog';
 import { DialogTrigger, Dialog, DialogContent } from '@/components/ui/dialog';
 
 const AddSubmissionPanel = () => {

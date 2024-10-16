@@ -1,18 +1,6 @@
 import { useState, useRef } from 'react';
 
 import UserMsgListItem from '@/components/Librarian/UserMsgListItem/UserMsgListItem';
-// import { NewGroupForm } from '../NewGroupForm/NewGroupForm';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/Librarian/dialog';
-
-
-
 
 const UserMsgList = () => {
   const inputRef = useRef(null);
@@ -75,21 +63,23 @@ const UserMsgList = () => {
   ];
 
   return (
-    <div className="min-w-60 flex flex-col justify-start items-center bg-[white]">
-        <div className="h-[60px] w-full flex justify-center items-center font-bold">Chat</div>
-          <div
-            className="flex h-full w-full flex-col overflow-y-scroll rounded-t-2xl bg-bg-secondary"
-            style={{ scrollbarWidth: 'none' }}
-          >
-            {users.map((user, index) => (
-              <UserMsgListItem
-                key={index}
-                user={user}
-                isActive={activeIndex === index}
-                onClick={() => handleItemClick(index)}
-              />
-            ))}
-          </div>
+    <div className="flex min-w-60 flex-col items-center justify-start bg-[white]">
+      <div className="flex h-[60px] w-full items-center justify-center font-bold">
+        Chat
+      </div>
+      <div
+        className="flex h-full w-full flex-col overflow-y-scroll rounded-t-2xl bg-bg-secondary"
+        style={{ scrollbarWidth: 'none' }}
+      >
+        {users.map((user, index) => (
+          <UserMsgListItem
+            key={index}
+            user={user}
+            isActive={activeIndex === index}
+            onClick={() => handleItemClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

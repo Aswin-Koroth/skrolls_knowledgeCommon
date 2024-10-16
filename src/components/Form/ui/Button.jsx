@@ -5,7 +5,7 @@ const Button = ({ className, children, onClick = () => {} }) => {
     <button
       onClick={onClick}
       className={cn(
-        'flex cursor-pointer items-center gap-1 rounded-sm bg-text px-2 py-1 text-xs text-background-sec',
+        'bg-text text-background-sec flex cursor-pointer items-center gap-1 rounded-md px-2 py-1 text-sm',
         className
       )}
     >

@@ -1,16 +1,14 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { products } from '@/data/constants';
-import { TableNav, TableToolbar, Table } from '@/components/Table';
+import { TableNav, Table, DeptToolbar } from '@/components/Table';
 import search_icon from '@/assets/search.svg';
 import approve_icon from '@/assets/search.svg';
 import reject_icon from '@/assets/search.svg';
-// import { useModal } from '@/context/ModalContext';
 
 const AdminDepartment = () => {
   const [tableData, setTableData] = useState(products);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  // const { setIsSubmissionPanelOpen } = useModal();
 
   const columns = useMemo(
     () => [
@@ -55,12 +53,8 @@ const AdminDepartment = () => {
 
   const setTableDataCallback = useCallback((newData) => {
     setTableData(newData);
-    setCurrentPage(1); // Reset to first page when data changes
+    setCurrentPage(1);
   }, []);
-
-  // const handleAddNew = useCallback(() => {
-  //   setIsSubmissionPanelOpen(true);
-  // }, [setIsSubmissionPanelOpen]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -68,21 +62,10 @@ const AdminDepartment = () => {
   }, [tableData, currentPage, itemsPerPage]);
 
   return (
-    <section className="flex h-[calc(100%-80px)] flex-col p-10 pb-2 max-sm:p-5 max-xs:p-2">
+    <section className="max-xs:p-2 flex h-[calc(100%-80px)] flex-col p-10 pb-2 max-sm:p-5">
       <h1 className="mb-4 text-xl font-bold">Department Management</h1>
       <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
-        <TableToolbar
-          data={products}
-          setTableData={setTableDataCallback}
-          // searchFields={[
-          //   'productName',
-          //   'category',
-          //   'brand',
-          //   'description',
-          //   'price',
-          // ]}
-          // onAddNew={handleAddNew}
-        />
+        <DeptToolbar setTableData={setTableDataCallback} />
         <Table
           columns={columns}
           data={paginatedData}

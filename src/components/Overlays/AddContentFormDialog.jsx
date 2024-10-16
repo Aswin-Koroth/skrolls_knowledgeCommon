@@ -5,8 +5,9 @@ import TrashIcon from '@/assets/TrashIcon';
 import ViewIcon from '@/assets/ViewIcon';
 
 import { SUBMISSION_TYPES } from '@/data/constants';
+import { formatFileSize } from '@/lib/utils';
 import { DialogClose, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import Button from '../SubmissionViewModal/Button';
+import Button from '../Form/ui/Button';
 import { useState } from 'react';
 
 export const AddContentFormDialog = ({ selection }) => {
@@ -15,16 +16,6 @@ export const AddContentFormDialog = ({ selection }) => {
   const [file, setFile] = useState(null);
   const [isSubmittable, setisSubmittable] = useState(false);
 
-  const formatFileSize = (sizeInBytes) => {
-    // If the file size is less than 1 MB, convert to KB
-    if (sizeInBytes < 1024 * 1024) {
-      return (sizeInBytes / 1024).toFixed(2) + ' KB';
-    }
-    // Else, convert to MB
-    else {
-      return (sizeInBytes / (1024 * 1024)).toFixed(2) + ' MB';
-    }
-  };
   const handleView = (e) => {
     window.open(fileData);
   };
@@ -45,7 +36,7 @@ export const AddContentFormDialog = ({ selection }) => {
         <DialogTitle></DialogTitle>
       </DialogHeader>
 
-      <form className="px-5">
+      <form className="">
         <div className="flex flex-col gap-4 pb-5">
           <div className="flex flex-col gap-2 max-xl:gap-1">
             <label
@@ -99,8 +90,7 @@ export const AddContentFormDialog = ({ selection }) => {
             <label htmlFor="authors" className="select-none text-sm font-bold">
               Authors
             </label>
-            <div className="flex h-10 flex-col gap-1 rounded-md border-b-[1px] border-border-primary bg-bg-primary px-2 py-1">
-              <div className="grid w-full grid-cols-2 items-center gap-2"></div>
+            <div className="flex h-10 items-center justify-start gap-1 rounded-md border-b-[1px] border-border-primary bg-bg-primary px-2 py-1">
               <div className="flex items-center gap-2 text-sm font-light">
                 <img
                   src={search_user_icon}

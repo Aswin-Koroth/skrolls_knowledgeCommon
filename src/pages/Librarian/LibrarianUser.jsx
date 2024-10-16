@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { users } from '@/data/constants';
-import { TableNav, TableToolbar, Table } from '@/components/Table';
+import { TableNav, Table, UserToolbar } from '@/components/Table';
 import view_icon from '@/assets/visibility.svg';
 import { useModal } from '@/context/ModalContext';
 
@@ -13,7 +13,7 @@ const LibrarianUser = () => {
   const columns = useMemo(
     () => [
       { header: 'Users', key: 'name' },
-      { header: 'Status', key: 'status' }
+      { header: 'Status', key: 'status' },
     ],
     []
   );
@@ -31,9 +31,7 @@ const LibrarianUser = () => {
   }, []);
 
   const actions = useMemo(
-    () => [
-      { label: 'View', onClick: handleView, icon: view_icon }
-    ],
+    () => [{ label: 'View', onClick: handleView, icon: view_icon }],
     [handleView]
   );
 
@@ -51,21 +49,10 @@ const LibrarianUser = () => {
     return tableData.slice(startIndex, startIndex + itemsPerPage);
   }, [tableData, currentPage, itemsPerPage]);
   return (
-<section className="flex h-[calc(100%-80px)] flex-col p-10 pb-2 max-sm:p-5 max-xs:p-2">
+    <section className="max-xs:p-2 flex h-[calc(100%-80px)] flex-col p-10 pb-2 max-sm:p-5">
       <h1 className="mb-4 text-xl font-bold">User Management</h1>
       <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
-        <TableToolbar
-          data={users}
-          setTableData={setTableDataCallback}
-          searchFields={[
-            'productName',
-            'category',
-            'brand',
-            'description',
-            'price',
-          ]}
-          onAddNew={handleAddNew}
-        />
+        <UserToolbar />
         <Table
           columns={columns}
           data={paginatedData}
@@ -80,7 +67,7 @@ const LibrarianUser = () => {
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default LibrarianUser
+export default LibrarianUser;

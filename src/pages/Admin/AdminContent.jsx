@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { modals, products } from '@/data/constants';
-import { TableNav, TableToolbar, Table } from '@/components/Table';
+import { TableNav, Table, ContentToolbar } from '@/components/Table';
 import search_icon from '@/assets/search.svg';
 import approve_icon from '@/assets/search.svg';
 import reject_icon from '@/assets/search.svg';
@@ -75,18 +75,7 @@ const AdminContent = () => {
       <section className="max-xs:p-2 static flex h-[calc(100%-80px)] flex-col bg-bg-muted p-10 pb-2 max-sm:p-5">
         <h1 className="mb-4 text-xl font-bold">Content Management</h1>
         <div className="flex min-h-0 flex-col overflow-hidden bg-white dark:bg-gray-800">
-          <TableToolbar
-            data={products}
-            setTableData={setTableDataCallback}
-            // searchFields={[
-            //   'productName',
-            //   'category',
-            //   'brand',
-            //   'description',
-            //   'price',
-            // ]}
-            // onAddNew={handleAddNew}
-          />
+          <ContentToolbar />
           <Table
             columns={columns}
             data={paginatedData}

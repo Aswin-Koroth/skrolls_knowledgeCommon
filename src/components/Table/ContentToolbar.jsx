@@ -1,60 +1,32 @@
-import { useEffect, useRef, useState } from 'react';
-import search_icon from '@/assets/search.svg';
+import { useState } from 'react';
 import filter_icon from '@/assets/filter.svg';
 import downarrow_icon from '@/assets/downarrow.svg';
 import add_icon from '@/assets/add.svg';
-import { useModal } from '@/context/ModalContext';
 import DropdownButton from './ui/DropDownButton';
 import useClickOutside from '@/hooks/useClickOutside';
+import SearchBox from './SearchBox';
+import { useModal } from '@/context/ModalContext';
 import { modals } from '@/data/constants';
 
-const TableToolbar = ({ data, setTableData }) => {
-  const { openModal } = useModal();
-
-  const [searchQuery, setSearchQuery] = useState('');
+const ContentToolbar = ({ data, setTableData }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { openModal } = useModal();
 
   const dropdownRef = useClickOutside(activeDropdown, () =>
     setActiveDropdown(null)
   );
 
+  const onAddNew = () => {
+    openModal(modals.SUBMISSION_PANEL);
+  };
+
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
-  const handleInput = (e) => {
-    const query = e.target.value.toLowerCase();
-    setSearchQuery(query);
-    const filteredData = data.filter(
-      (item) =>
-        item.productName.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.brand.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query) ||
-        item.price.toString().includes(query)
-    );
-    setTableData(filteredData);
-  };
   return (
     <div className="flex flex-col items-center justify-between space-y-3 bg-bg-muted py-4 md:flex-row md:space-x-4 md:space-y-0">
-      <div className="w-full md:w-1/2">
-        <form className="flex items-center">
-          <div className="relative w-full">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-              <img src={search_icon} className="h-5 w-5" alt="" />
-            </div>
-            <input
-              type="text"
-              id="simple-search"
-              className="dark:focus:ring-primary-500 dark:focus:border-primary-500 placeholder-text-fade block h-[37px] w-full border-[1px] border-gray-400 bg-gray-50 p-2 pl-10 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
-              placeholder="Search"
-              required=""
-              value={searchQuery}
-              onInput={handleInput}
-            />
-          </div>
-        </form>
-      </div>
+      <SearchBox />
       <div className="flex w-full flex-shrink-0 flex-col items-stretch justify-end space-y-2 md:w-auto md:flex-row md:items-center md:space-x-3 md:space-y-0">
         <div
           ref={dropdownRef}
@@ -109,44 +81,13 @@ const TableToolbar = ({ data, setTableData }) => {
             )}
           </div>
           <div className="relative w-full">
-            <DropdownButton
-              onClick={() => toggleDropdown('action')}
-              dropdownId="actionsDropdown"
-              isActive={activeDropdown === 'action'}
-            >
-              <img
-                src={downarrow_icon}
-                alt="down arrow"
-                className="-ml-1 mr-1.5 w-7"
-              />
-              Actions
-            </DropdownButton>
-            {activeDropdown === 'action' && (
-              <div
-                id="actionsDropdown"
-                className="absolute top-[110%] z-10 w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700 max-md:w-full md:right-0"
-              >
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Delete all
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="relative w-full">
             <button
               className="hover:text-primary-700 flex h-[37px] w-full items-center justify-center border border-gray-200 bg-primary px-4 py-1 text-sm font-medium text-white hover:bg-red-400 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 md:w-auto"
               type="button"
-              onClick={() => {
-                openModal(modals.SUBMISSION_PANEL);
-              }}
+              onClick={onAddNew}
             >
               <img src={add_icon} alt="Add icon" className="-ml-1 mr-1.5 w-6" />
-              <span className="leading-none">Add new</span>
+              <span className="leading-none">Add new </span>
             </button>
           </div>
         </div>
@@ -155,4 +96,4 @@ const TableToolbar = ({ data, setTableData }) => {
   );
 };
 
-export default TableToolbar;
+export default ContentToolbar;
