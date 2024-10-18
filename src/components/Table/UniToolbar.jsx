@@ -90,7 +90,7 @@ const UniToolbar = ({ data, setTableData }) => {
                   <span className="leading-none">Add new</span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="">
+              <DialogContent>
                 <AddUniversityFormDialog />
               </DialogContent>
             </Dialog>

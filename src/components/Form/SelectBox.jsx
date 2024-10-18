@@ -1,10 +1,12 @@
-const Input = ({
+import React from 'react';
+
+const SelectBox = ({
   label,
   name,
-  type = 'text',
-  placeholder,
   icon = null,
+  options,
   children,
+  required = true,
 }) => {
   return (
     <div className="relative flex flex-col gap-2 max-xl:gap-1">
@@ -15,18 +17,21 @@ const Input = ({
         {icon && (
           <img src={icon} className="ml-2 w-4" alt="icon" draggable="false" />
         )}
-        <input
-          placeholder={placeholder}
-          type={type}
+        <select
           name={name}
           id={name}
-          required
           className="w-full bg-transparent px-2 py-1 outline-none"
-        />
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
       </div>
       {children}
     </div>
   );
 };
 
-export default Input;
+export default SelectBox;
