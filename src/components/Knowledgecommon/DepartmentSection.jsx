@@ -1,31 +1,38 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import It from '@/assets/IT.png';
-import CollegeCard from '@/components/Knowledgecommon/CollegeCard';
 import Stat from '@/assets/statistic.png';
-import Maths from '@/assets/maths.png';
-import Pe from '@/assets/pE.png';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import apiClient from '@/lib/apiClient'; // Adjust the path based on your setup
+import CollegeCard from '@/components/Knowledgecommon/CollegeCard';
 
 const DepartmentSection = () => {
+  const [departments, setDepartments] = useState([]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      try {
+        const response = await apiClient.get('Department/');
+        setDepartments(response.data); // Store the entire department data
+      } catch (error) {
+        console.error('Error fetching departments:', error);
+      }
+    };
+    fetchDepartments();
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 custom-lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 w-auto h-full">
-    <CollegeCard
-      HeroImg={It}
-      Title="Department of Information Technology"
-      onClick={() => navigate('/result')}
-    />
-    <CollegeCard HeroImg={Stat} Title="Department of Statistics" />
-    <CollegeCard HeroImg={Maths} Title="Department of Mathematics" />
-    <CollegeCard HeroImg={Pe} Title="Department of Physical Education" />
-    <CollegeCard HeroImg={Pe} Title="Department of Physical Education" />
-    <CollegeCard HeroImg={Pe} Title="Department of Physical Education" />
-    <CollegeCard HeroImg={Pe} Title="Department of Physical Education" />
-    <CollegeCard HeroImg={Pe} Title="Department of Physical Education" />
-  </div>
-  
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 custom-lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 w-auto h-full ">
+      {departments.map((department) => (
+        <CollegeCard
+          key={department.id}
+          HeroImg={Stat} // Use the icon field from the backend
+          Title={department.department_name} // Display department name
+          onClick={() => navigate(`/department/${department.id}`)} // Navigate to a dynamic route (adjust if necessary)
+        />
+      ))}
+    </div>
   );
 };
 
 export default DepartmentSection;
+

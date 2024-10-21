@@ -2,8 +2,6 @@ import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import PublicLayout from './layouts/PublicLayout';
 
-const Home = lazy(() => import('./pages/Public/Home'));
-
 // const PublicLayout = lazy(() => import('./layouts/PublicLayout'));
 // const UserLayout = lazy(() => import('./layouts/UserLayout'));
 const LibrarianLayout = lazy(() => import('./layouts/LibrarianLayout'));
@@ -27,6 +25,9 @@ const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
 const PublicMainPage = lazy(() => import('./pages/Public/knowledgeCommon/PublicMainPage'));
+
+const TestPage = lazy(() => import('./pages/Public/knowledgeCommon/Test'));
+
 const ResultPage = lazy(
   () => import('./pages/Public/knowledgeCommon/ResultPage')
 );
@@ -76,6 +77,8 @@ function App() {
         <Route path="/article" element={<ArticlePage />} />
         <Route path="/authorPage" element={<AuthorPage />} />
         <Route path="/PublicMainPage" element={<PublicMainPage/>} />
+        <Route path="/test" element={<TestPage/>} />
+        
         
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
