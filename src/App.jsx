@@ -25,6 +25,7 @@ const AdminSettings = lazy(() => import('./pages/Admin/AdminSettings'));
 const PublicHome = lazy(() => import('./pages/Public/Home'));
 const HomePage = lazy(() => import('./pages/Public/knowledgeCommon/HomePage'));
 const PublicMainPage = lazy(() => import('./pages/Public/knowledgeCommon/PublicMainPage'));
+const PublicCollegeAndDepartment = lazy(() => import('./pages/Public/knowledgeCommon/PublicCollegeAndDepartment'));
 
 const TestPage = lazy(() => import('./pages/Public/knowledgeCommon/Test'));
 
@@ -78,6 +79,7 @@ function App() {
         <Route path="/authorPage" element={<AuthorPage />} />
         <Route path="/PublicMainPage" element={<PublicMainPage/>} />
         <Route path="/test" element={<TestPage/>} />
+        <Route path="/PublicCollegeAndDepartments" element={<PublicCollegeAndDepartment/>} />
         
         
         <Route path="*" element={<Navigate to="/" replace />} />
